@@ -1,0 +1,70 @@
+#india {
+    fill: #008000;
+    opacity: .8;
+    stroke: #000000;
+    stroke-width: .7;
+}
+svg {
+    background: #eee;
+}
+#background{
+    position: absolute;
+    top: 60%;
+    letter-spacing: 3px;
+    font-size: 40px;
+    right: 12%;
+    z-index: 1;
+    font-weight: bold;
+    color: #CCC;
+    transform: rotate(-45DEG);
+}
+@media(max-width: 768px){
+    #background{
+        display: none;
+    }
+}
+.firstslices {
+	fill: #d73027;
+	background-color: #d73027;
+}
+
+.secondslices {
+	fill:#fc8d59;
+	background-color: #fc8d59;
+}
+
+.thirdslices {
+	fill: #e8b933;
+	background-color: #e8b933;
+}
+
+.fourthslices {
+	fill: #91cf60;
+	background-color: #91cf60;
+}
+
+.fifthslices {
+	fill: #1a9850;
+	background-color: #1a9850;
+}
+
+.sixthslices {
+  fill: #929da8;
+  background-color: #929da8;;
+}
+
+// .map_popover {
+//     background: #f9f9f9;
+//     border-radius: 5px;
+//     border: 1px solid #4bbcd7;
+//     color: #727272;
+//     display: none;
+//     font: italic 14px Georgia;
+//     left: 0;
+//     opacity: 0.6;
+//     padding: 10px 20px;
+//     position: absolute;
+//     text-align: center;
+//     top: 0;
+//     z-index: 1000;
+// }

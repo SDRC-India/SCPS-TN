@@ -1,0 +1,664 @@
+
+/* $primary-color: #1f4a7c; */
+
+.lang-options { border-left: 1px solid #c5c5c5; }
+
+.setting-option {
+    display: inline-flex;
+}
+.setting-icon {
+    list-style: none;
+    padding: 6px 0 8px 0 !important;;
+}
+.setting-menu-icon {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.setting-icon:hover {
+    background-color: #c5c5c57a !important;
+}
+
+
+.setting-menu{
+    background-color: #ffffff !important;
+    border-radius: 0 !important;
+    top: 7px;
+    overflow: unset;
+    border: none;
+    top: 14px !important;
+    margin-left: -175%;
+}
+
+
+
+.logo-text{
+    
+    padding: 11px;
+    display: inline-block;
+    height: 89px;
+}
+.logo-text h2{
+    color: #1f4a7c;
+    font-size: 29px;
+    font-weight: 500;
+}
+.logo-text p{
+    font-weight: 500;
+}
+
+.logo-block{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.navbar-fixed {
+    top: 0;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+}
+
+.background {
+      background: #9e9e9e47;
+  }
+
+.region-header .block {
+    float: right;
+    line-height: 10px;
+    padding: 0;
+}
+.lang-details {
+    list-style-type: none ;
+    display: inline-flex;
+    margin-bottom: 0 ;
+}
+
+a.login {
+    color: #000;
+    display: inline-block;
+    float: left;
+    line-height: 30px;
+    padding: 0 10px 0 25px;
+    margin-left: 0px;
+    width: 100%;
+}
+
+a.english {
+    color: #000;
+    display: inline-block;
+    float: left;
+    line-height: 30px;
+    padding: 0 10px 0 10px;
+    border-right: 1px solid #C5C5C5;
+    margin-left: 0px;
+    cursor: pointer;
+}
+a.language-link {
+    color: #000;
+    display: inline-block;
+    float: left;
+    line-height: 30px;
+    padding: 0 10px 0 11px;;
+    margin-left: 0px;
+    border-right: 1px solid #C5C5C5;
+}
+.setting-icon-link {
+    padding: 0 10px 0 10px;
+    color: #333; 
+}
+
+/* new header css */
+.all-logo {
+    list-style: none;
+    display: inline-flex;
+    padding: 0;
+    margin: 8px 0 0 0;
+}
+.user-block {
+    float: right;
+}
+.logo-design {
+    padding: 0 20px 0 15px;;
+}
+.govt-logo{
+    width: 70px;
+}
+.sbm-logo{
+    width: 98px;
+}
+img.cm-logo {
+    height: 70px;
+    margin-top: 9px;
+    margin-right: 10px;
+}
+header#header {
+    background: #008cff !important;
+}
+.heading-name{
+    margin-top: 15px;
+    /* padding: 9px; */
+}
+.logo-background{
+	background-color: #57aef6;
+}
+.heading-title{
+    color: #1f497b;
+    font-size: 25px;
+}
+.left-container .col-md-7{
+    padding-left: 0;
+    padding-right: 0;
+}
+.heading-name h2{
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 2px;
+}
+
+.welcome-user {
+    margin-top: 15px;
+    cursor: default;
+}
+.logged-user {
+    color: #1f4a7c;
+    font-size: 13px;
+    float: right;
+}
+.welcome-msg {
+    float: right;
+    cursor: default;
+}
+.top_link_icon {
+    margin-top: 5px;
+    text-align: center;
+}
+.round_icon > span {
+    font-size: 14px !important;
+    font-weight: bold;
+    color: #1f4a7c;
+    left: 7px;
+}
+.icon-text {
+    position: relative;
+    bottom: -3px;
+}
+.login-section {
+    margin-top: 9px;
+}
+.fa-user:before {
+    content: "\f007";
+}
+.round_icon i {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    padding: 11px 0px 0px 0px;
+    border: 2px solid #cecece;
+    font-size: 28px !important;
+    color: #949393;
+    box-shadow: 0px 0px 0px 8px rgba(68,68,68,0.08);
+    transition: box-shadow .5s;
+    transition-timing-function: linear;
+}
+.round_icon i:hover {
+    box-shadow: 0px 0px 0px 8px rgba(176,173,176,1);
+}
+
+.language-block .block {
+    float: left;
+    line-height: 10px;
+    padding: 0;
+}
+
+.language-lists {
+    list-style-type: none;
+    display: inline-flex;
+    margin-bottom: 0;
+    padding-left: 13px;
+}
+
+.gov-logo-section {
+    display: inline-flex;
+}
+
+li.nav-item .dropdown-menu a {
+    font-size: 14px;
+}
+.fa-user {
+    padding-right: 5px;
+}
+
+a.english:hover, a.language-link:hover, a.login:focus, a.english:focus, a.language-link:focus  {
+    background-color: #c5c5c57a;
+}
+a.login:hover{
+    color: #1f497b;
+    font-weight: bold;
+
+}
+.triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 8px solid #1f497b;
+    float: right;
+    margin-top: -9px;
+    margin-left: 20px;
+    float: left;
+}
+.triangle-up-setting {
+    width: 0;
+	height: 0;
+	border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 8px solid #1f4a7c;
+    float: right;
+    margin-top: -8px;
+    margin-right: 20px;
+    float: right;
+}
+.arrow {
+    overflow: unset !important;
+}
+.top-text-icon {
+    width: 16px;
+}
+.text-size-icon {
+    border-right: 1px solid #C5C5C5;
+}
+.fa-user, .fa-key, .fa-sign-out{
+margin: 0 3px 0 -10px;
+}
+.fa-user:hover, .fa-key:hover, .fa-sign-out:hover{
+    font-weight: bold;
+    color: #1f497b;
+    font-style: inherit;
+    }
+
+a.english, a.language-link, a.login {
+    font-size: 13px;
+}
+
+.sub-heading {
+    color: #1f497b;
+}
+.padding-left-zero {
+    padding-left: 0;
+}
+.padding-right-zero {
+    padding-right: 0;
+}
+
+.head-info-left{
+    margin-left: -68px;
+}
+
+.right-logo{
+    text-align: right;
+}
+.head-info{
+    float:left;
+    display: inline-block;
+}
+
+.right-logos{
+    margin-right: 30px;
+}
+.right-sec{
+    padding: 53px 0 0 0;
+    
+}
+.cm_name {
+    font-size: 15px;
+    color: black;
+    font-weight: 400;
+}
+.cm_designation {
+    font-size: 11px;
+    color: black;
+    font-weight: 400;
+    line-height: 9px;
+}
+.navbar{
+    width: 100%;
+    padding: 0;
+    z-index: 101;
+}
+.navbar-nav{
+    padding-left: 30px;
+}
+.navbar.navbar-light .breadcrumb .nav-item .nav-link, .navbar.navbar-light .navbar-nav .nav-item .nav-link {
+    color: #f0f0f0;
+    
+}
+.navbar.navbar-light .navbar-nav .nav-item .nav-link:hover {
+    color: #000;  
+}
+li.nav-item {
+    padding: 5px 0;
+    font-size: 15px;
+}
+li.nav-item a{
+	padding: 0px 15px;
+    border-left: 1px solid #CCC;
+}
+.navbar .dropdown-menu a {
+    font-size: 0.9375rem;
+    font-weight: 300;
+    padding: 5px 0 5px 6px;
+    color: #fff !important;
+    border-bottom: 1px solid #fff;
+}
+.dropdown-toggle::after {
+    margin-left: 7px;
+}
+
+li.nav-item:hover {
+    cursor: pointer !important;
+}
+.navbar.navbar-light .navbar-toggler {
+    color: #000;
+    margin: 5px 0px 5px 30px;
+    border-radius: 0;
+}
+
+.dropdown-menu .dropdown-item:last-child {
+    border-bottom: none !important;
+}
+.head-info ul{
+    list-style: none;
+    display: inline-flex;
+    padding: 0;
+}
+a:hover {
+    text-decoration: none;
+}
+.logo-sec{
+	float: left;
+	display: inline-block;
+}
+.logo-sec.logo-con {
+    margin: 10px 20px 10px 0;
+}
+.welcome-name{
+    color: white;
+    text-align: right;
+    margin-right: 20px;
+}
+
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: rgba(0,0,0,.9) !important;
+}
+
+
+        /* media query */
+
+@media(max-width: 1024px){
+    .govt-logo {
+        width: 50px;
+        margin-top: 10px;
+    }
+    .sbm-logo{
+        width: 80px;
+        margin-top: 6px;
+    }
+    .heading-title {
+        font-size: 22px;
+    }
+    img.cm-logo {
+        width: 75px;
+    }
+    a.english {
+        padding: 0 4px 0 3px;
+    }
+    li.nav-item {
+        padding: 0 0 0 2px;
+        font-size: 14px;
+    }
+    .dropdown-toggle::after {
+        margin-left: 3px;
+    }
+    .setting-menu {
+        margin-left: -207%;
+    }
+    .round_icon i {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        padding: 9px 0px 0px 0px;
+        border: 2px solid #cecece;
+        font-size: 24px !important;
+    }
+    .logo-design {
+        padding: 0 15px 0 14px;
+    }
+    .round_icon > span {
+        left: 8px !important;
+    }
+    .round-icon-logout > span {
+        left: 0 !important;
+    }
+    .right-sec {
+        padding: 40px 0 0 0;
+    }
+   
+}
+
+// @media (max-width: 991px){
+//     .setting-menu {
+//         margin-left: -234%;
+//     }
+//     button.navbar-toggler {
+//         background-color: #404040;
+//         margin-left: 40px;
+//     }
+//     .logo-design {
+//         padding: 0 12px 0 14px;
+//     }
+//     .heading-title {
+//         font-size: 20px;
+//     }
+//     .dropdown-menu.arrow.show {
+//         background: #f0f0f0;
+//     }
+//     .triangle-up {
+//         border-bottom: 8px solid #f0f0f0;
+//         margin-top: -8px;
+//     }
+//     .navbar .dropdown-menu a {
+//         font-weight: 400;
+//         color: #1f4a7c !important;
+//         border-bottom: 1px solid #1f4a7c;
+//     }
+//     .navbar-nav .dropdown-menu {
+//         position: static !important;
+//         float: left;
+//     }
+//     li.nav-item:hover {
+//         background: #f7a707;
+//         cursor: pointer !important;
+//     }
+ 
+//     a.english, a.language-link, a.login {
+//         font-size: 12px;
+//     }
+//     .navbar.navbar-light .navbar-toggler-icon {
+//         cursor: pointer;
+//         height: 23px;
+//         width: 22px;
+//     }
+//     .nav-item.dropdown.show .dropdown-menu {
+//         transform: translate3d(6px, 1px, 0px);
+//     }
+//     /* .navbar-nav {
+//         margin-bottom: 46px;
+//     } */
+//     .top-menu {
+//         padding: 0;
+//     }
+//     .navbar-toggler {
+//         padding: 0 5px 0 5px;
+//     }
+//     .navbar-fixed {
+//         top: 0;
+//         z-index: 100;
+//         position: relative;
+//         width: 100%;
+//     }
+//     .welcomeuser{
+//         display: none;
+//     }
+//     .loginuser{
+//         display: inline-flex;
+//     }
+// } 
+
+
+
+
+//navbar for small devices
+.navbar-fixed {
+	position: fixed;
+	top: 0;
+    border-width: 0 0 1px;
+    right: 0;
+    left: 0;
+    z-index: 930;
+}
+
+.scpsTlogo {
+	float: left;
+	margin: 13px;
+	height: 60px;
+	width: 60px;
+}
+.tamilGlogo {
+	float: right;
+	margin: 13px;
+	height: 60px;
+	width: 60px;
+}
+.right-logo{
+	margin: 0;
+}
+.scps-navbar {
+	background-color: #54aef6 !important;
+	border-color: #54aef6 !important;
+	border-radius: 0 !important;
+	padding-top: 0;
+    padding-bottom: 0;
+	margin-bottom:1px;
+}
+.navbar-inverse .navbar-nav>li>a {
+	color: #fff;
+	padding: 18px 9px;
+}
+
+.scps_header {
+    color: #1f497b;
+    margin-top: 12px;
+    font-size: 20px;
+}
+.scps_subheader {
+    font-size: 15px;
+}
+.Welcome-user{
+	color: white;
+}
+div#collapsibleNavbar li a {
+    color: #FFF;
+    margin: 0 5px;
+}
+.override-topheader-font-size {
+    font-size: 13px !important;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+	background-color: transparent !important;
+	font-weight: bold;
+}
+
+.navbar-toggler{
+	background-color: #555;
+	margin-bottom: 10px;
+}
+.navbar-header{
+	display: inline-block;
+}
+
+@media ( min-width : 992px) {
+    .navbar-header{
+        width: 510px;
+    }
+}
+
+
+@media ( min-width : 991px) {
+    .navbar-nav{
+        flex-direction: row;
+    }
+}
+ 
+@media ( min-width : 768px) {
+	.scpsTlogo, .tamilGlogo{
+		width: 70px;
+		height: 70px;
+	}
+    #navbarNavDropdown .navbar-nav {
+        float: right;
+
+	}
+	.hidden-sm-up{
+		display: none;
+    }
+    .navbar-nav{
+        flex-direction: row;
+    }
+	
+}
+
+@media(max-width: 767px){
+	.hidden-sm-down{
+		display: none;
+	}
+
+	#collapsibleNavbar li{
+		padding: 5px 0;
+	}
+
+	.Welcome-user{
+		float: right;
+	}
+	.scpsTlogo{
+		margin-left: 0;
+    }
+    li.nav-item a{
+        padding: 0px 0px;
+        border-left: none;
+    }
+    div#collapsibleNavbar {
+        border-top: 1px solid #CCC;
+    }
+}
+
+@media(max-width: 608px){
+    h2.scps_header {
+        width:360px;
+    }
+    img.img-responsive.tamilGlogo {
+        margin: 13px 20px 13px 13px;
+    }
+    .res-admin{
+        padding-right:10px;
+    }
+	
+}
+
+@media(max-width: 565px){
+	.scps_header, .scps_subheader{
+		font-size: 20px
+	}
+	
+}

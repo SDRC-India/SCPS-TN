@@ -1,0 +1,249 @@
+	.cpisloginsvgheight {
+        height: 84px;
+        // margin-left: 37%;
+        margin-bottom: 0;
+    }
+    .forg{
+        font-size: 15px;
+        color: blue;
+        text-decoration: underline;
+    }
+    .full-width {
+        width: 100%;
+    }
+    mat-error {
+        font-size: 13px;
+    }
+    .error-message{
+        display: none;
+    }
+    .panel-heading {
+        padding: 5px 15px;
+    }
+    
+    .panel-footer {
+        padding: 1px 15px;
+        color: #A0A0A0;
+    }
+    
+    .loginbtn {
+        display: none !important;
+    }
+    
+    .login-details
+    {
+        margin-top: 20px;
+    }
+    
+    .profile-img {
+        width: 96px;
+        height: 96px;
+        margin: 0 auto 10px;
+        display: block;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
+    
+    .loginBtn {
+        border-radius: 0;
+        background: #333;
+        border-color: #333;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .loginBtn:hover {
+        border-radius: 0;
+        background: #333;
+        border-color: #333;
+        font-size: 16px;
+    }
+    
+    .panelBox {
+        border-color: rgba(255, 255, 255, .15);
+        border-radius: 0 !important;
+        /*     background: rgba(238, 238, 238, 0.24) !important; */
+        /*     margin-top: 83px; */
+    }
+    
+    .panel.panel-default.panelBox {
+        margin-bottom: 0;
+    }
+    
+     
+    .sign-up-title {
+        text-align: center;
+        margin: 15px 0 15px 0px;
+        color: #54aef6;
+    }
+    
+    .input-group-addon {
+        padding: 6px 12px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1;
+        color: #fff !important;
+        text-align: center;
+        background-color: #54aef6 !important;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    .ipadPotraitView {
+        margin-top: 49px;
+        line-height: 1.89;
+    }
+    
+    .forgotPass {
+        color: #54aef6;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .forgotPass:hover {
+        color: #54aef6;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    .forgotPassUsername {
+        /* 	float:left; */
+        text-align: left;
+    }
+    
+    .forgotPass-header {
+        background: #54aef6;
+        text-align: center;
+        color: #fff;
+    }
+    
+    input#username, input#otp {
+        border-radius: 0;
+    }
+    
+    form#myForm .input-sec {
+        width: 75%;
+        float: left;
+    }
+    #myForm{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .btn-default.button-sec {
+        width: 110px;
+        font-size: 14px;
+        margin-left: 10px;
+        border-radius: 0;
+        padding: 7.5px 10px;
+    }
+    .forgotPassUsername label {
+        margin-bottom: 0px;
+    }
+
+    .btn-default {
+        color: #fff;
+        background-color: #54aef6;
+        border-color: #54aef6;
+        width: 110px;
+    }
+    
+    .btn-default:hover {
+        color: #fff;
+        background-color: #54aef6;
+        border-color: #54aef6;
+    }
+    .modal-title{
+        font-size: 18px;
+        width: 100%;
+    }
+    .modal-footer {
+        display: block;
+        padding: 15px;
+        border-top: 1px solid #e5e5e5;
+        text-align: center;
+    }
+    
+    input#newpasswordId {
+        border-radius: 0;
+    }
+    
+    .otpmatchedsign {
+        position: absolute;
+        display: inline-block;
+        bottom: 10px;
+    }
+    
+    .correctMark {
+        width: 23px;
+        height: 23px;
+        right: 20px;
+        bottom: 28px;
+    }
+    
+    .invaliderrormsg {
+        color: #ff6161;
+        font-size: 12px;
+        position: absolute;
+        font-weight: 500;
+        bottom: 84px;
+        margin-left: 15px;
+    }
+    
+    .exceptioinErrorBottom {
+        margin-bottom: -30px;
+    }
+
+    #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #2a23b3;
+        color: #fff;
+        text-align: left;
+        font-weight: bold;
+        border-radius: 2px;
+        padding: 9px 16px;
+        position: fixed;
+        right: 20px;
+        top: 30px;
+        z-index: 9999;
+        font-size: 17px;
+      }
+      
+      #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 1s 2.5s;
+        animation: fadein 0.5s, fadeout 1s 2.5s;
+      }
+      
+      @-webkit-keyframes fadein {
+        from {top: 0; opacity: 0;} 
+        to {top: 30px; opacity: 1;}
+      }
+      
+      @keyframes fadein {
+        from {top: 0; opacity: 0;}
+        to {top: 30px; opacity: 1;}
+      }
+      
+      @-webkit-keyframes fadeout {
+        from {top: 30px; opacity: 1;} 
+        to {top: 0; opacity: 0;}
+      }
+      
+      @keyframes fadeout {
+        from {top: 30px; opacity: 1;}
+        to {top: 0; opacity: 0;}
+      }
+    @media(max-width: 767px){
+        form#myForm .input-sec {
+            width: 70%;
+        }
+    }
+
+    @media(max-width: 464px){
+        form#myForm .input-sec {
+            width: 55%;
+        }
+    }

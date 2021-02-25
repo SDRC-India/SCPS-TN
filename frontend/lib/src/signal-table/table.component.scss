@@ -1,0 +1,137 @@
+.header-fixed { 
+    position: absolute; 
+    display:none;
+    z-index: 1;
+    overflow: hidden;
+    margin-right: 15px;
+    background-color: #57aef6;
+    
+    // width: auto;
+}
+.header-fixed .th.ng-star-inserted {
+    height: 100%;
+    float: left;
+    color: #FFF;
+    border-left: 1px solid #FFF;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    padding-top: .75rem;
+    display: inline;
+}
+.indicator-circle {
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    background-color: #CCC;
+    border-radius: 50%;
+}
+.parent-tabl-container{
+    position: relative;
+}
+
+table thead{
+    background-color: #187080;
+    color: #FFF;
+}
+td{
+    text-align: center;
+}
+table thead th{
+    vertical-align: middle;
+    text-align: center;
+}
+.pagination-view
+{
+    float:right;
+}
+#myInput {
+    width: 100%;
+    border-radius: 0;
+    font-size: 16px; 
+    padding: 7px 20px 12px 30px;
+    font-style: inherit;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    box-shadow: 0px 0px 2px 0px;
+}
+.table-btn.search .form-group{
+    position: relative;
+}
+.table-btn.search .form-group:before {
+    position: absolute;
+    font-family: 'FontAwesome';
+    top: 5px;
+    left: 7px;
+    color: #9c9c9c;
+    content: "\f002";
+  }
+
+.search-area
+{
+    font-style: italic;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+input[type="text"] 
+{
+    font-style:italic;
+}
+.table-btn .btn-excel, .table-btn .btn-pdf{
+    margin-bottom: 16px;
+    background-color: #357080;
+    color: #FFF;
+    border-radius: 0;
+}
+.btn-excel:focus, .btn-excel:active{
+    outline: none !important;
+    border: none !important;
+}
+.fa-sorting{
+    cursor: pointer;
+}
+.table-btn {
+    display: inline-block;
+    float: right;
+    margin: 0 5px;
+    // margin-bottom: 15px;
+}
+.fixedcontainer{
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+}
+.first-slice {
+    fill: #1a9641;
+    background-color: #1a9641;
+    color: #1a9641;
+}
+
+.second-slice {
+    fill: #a6d96a;
+    background-color: #a6d96a;
+    color: #a6d96a;
+}
+
+.third-slice {
+    fill: #fdae61;
+    background-color: #fdae61;
+    color: #fdae61;
+}
+
+.fourth-slice {
+    fill: #cc7365;
+    background-color: #cc7365;
+    color: #cc7365;
+}
+.fifth-slice {
+    fill: #d7191c;
+    background-color: #d7191c;
+    color: #d7191c;
+}
+.fix-th-width{
+    width: 240px;
+}
+
+

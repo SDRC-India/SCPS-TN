@@ -1,0 +1,95 @@
+<div id="mymain" class="container">
+  <div class="row">
+    <!-- <div class="col-md-12">
+            <div class="col-md-5 facilityDetails submissionfacilityDetails">
+      
+            </div>
+      
+            <div class="col-md-7">
+              <h3 class="submissionPageInfo">Drafts (Submission History)</h3> 
+            </div>
+          </div> -->
+    <div class="col-md-12">
+      <div class="col-md-12">
+        <h2 class="page-heading">Submission History</h2>
+      </div>
+    </div>
+
+    <div class="col-md-12" id="record_found" *ngIf="drafts">
+
+      <section class="profile-section col-md-12 col-sm-12 col-xs-12 submissionMgmtTable">
+        <div class="profile-entry">
+          <div id="profileTable" class="accordion-content expanded">
+            <div class='content'>
+              <div class=" table-responsive">
+                <table items="tableData" show-filter="true" cellpadding="0" cellspacing="0" border="0"
+                  class="dataTable table table-bordered scps submanagemnt" id="dataTable">
+                  <thead>
+                    <tr>
+                      <th class="submissionmgmt-serial">Sl.&nbsp;No.</th>
+                      <th class="submissionmgmt-date">First Submitted On</th>
+                      <th class="submissionmgmt-date">Last Updated On</th>
+                      <th class="submissionmgmt-date">Submission Month</th>
+
+                      <th class="submissionmgmt-action-preview-edit">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+
+                    <tr *ngFor="let td of drafts.reviewDataMap[formId]; let i = index">
+
+                      <td class="text-center">{{i+1}}</td>
+
+                      <td class="submissionmgmt-date-td">{{td.extraKeys.createdOn}}</td>
+
+                      <td class="submissionmgmt-date-td">{{td.extraKeys.updatedOn}}</td>
+
+                      <td class="submissionmgmt-date-td">{{td.extraKeys.monthYearOfSubmission}}</td>
+
+                      <td class="inputBox submissionmgmt-action-preview-edit-td">
+                        <button mat-raised-button color="primary" class="submitSCPS btnMarginzero"
+                          *ngIf="td.extraKeys.view == 'preview'"
+                          (click)="navigate('/dataentry','preview',td)">Preview</button>
+
+                        <button mat-raised-button color="primary" class="submitSCPS btnMarginzero"
+                          *ngIf="td.extraKeys.view == 'edit'" (click)="navigate('/dataentry','edit',td)">Edit</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-12" id="no_data" *ngIf="!drafts">
+          <div class="container-fluid">
+            <div class="col-md-12">
+              <section class="profile-section col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-12 profile-entry">
+                  <div id="profileTable" class="col-md-12 accordion-content expanded">
+                    <div class='content'>
+                      <h2 class="col-md-12 no_records">No record found !</h2>
+                    </div>
+                  </div>
+                </div>
+              </section>
+        
+            </div>
+          </div>
+        
+        
+        
+        </div>
+        
+        <div class="col-md-12 newentry-cont" *ngIf="!getDataDontEntryAllowRoute()">
+            <button mat-raised-button routerLink="/dataentry" color="primary" class="newentry"><i class="fa fa-plus" style="margin-right: 5px" aria-hidden="true"></i>New Entry</button>
+        </div>
+  </div>
+</div>
+
+

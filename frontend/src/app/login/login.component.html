@@ -1,0 +1,167 @@
+<div id="snackbar" [ngClass]="app.logoutSuccess ? 'show': ''">Logged out successfully</div>
+<div class="container tabletLoginiew">
+	<div class="row">
+		<div class="col-md-4 offset-md-4 col-xs-12 ipadPotraitView">
+			<div class="panel panel-default panelBox ">
+				<div class="panel-body">
+					<fieldset>
+						<div class="row justify-content-center">
+							<!-- <div class="col-xs-12"> -->
+							<img class="align-center center-block cpisloginsvgheight"
+								src="assets/images/scps_icon_2.svg">
+							<!-- </div> -->
+						</div>
+						<br />
+						<form #f="ngForm" (submit)="f.valid ?login():''" class="login-details"  [noValidate]="true">
+							<div class="row">
+								<div class="col-sm-12 col-md-10  offset-md-1 ">
+									<div class="form-group">
+										<div class="input-group">
+											<!-- <span class="input-group-addon"> <i class="fa fa-user fa-lg"></i> </span> -->
+												<input required [pattern]="usernameRegex" class="form-control full-width" placeholder="Username"
+												[(ngModel)]="credentials.username" name="username" type="text"
+												autofocus autocomplete="off" maxlength="50">
+												<mat-error class="padding-bottom ">
+                                    
+													{{f.controls['username']?.errors?.pattern ? 'Unacceptable characters entered in username':''}}
+													{{f.controls['username']?.errors?.required && (f.controls['username']?.touchedn || f.submitted) ? 'Please provide username':''}}
+												</mat-error>	
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<!-- <span class="input-group-addon"> <i class="glyphicon glyphicon-lock"></i></span>  -->
+											<input required class="form-control full-width" [pattern]="passwordRegex" placeholder="Password"
+												name="password" type="password"
+												[(ngModel)]="credentials.password" autocomplete="off"  maxlength="50">
+												<mat-error class="padding-bottom "> 
+													{{f.controls['password']?.errors?.pattern ? 'Password should be alphanumeric with special character (!@#$%^&*_ )':''}}
+													{{f.controls['password']?.errors?.required && (f.controls['password']?.touched || f.submitted)? 'Please provide password':''}}
+												</mat-error>
+											</div>
+									</div>
+
+									<div class="form-group">
+											<h5 class="forg">
+												<a class="forgotPass" routerLink="forgotpass" >Forgot
+													password ?</a>
+											</h5>
+										</div>
+
+									<div class="form-group">
+										<button type="submit" class="btn btn-lg btn-primary btn-block loginBtn"
+											value="LOGIN">LOGIN</button>
+									</div>
+
+									<div
+										style="color: red; vertical-align: middle;"
+										id="wronglogin" class="error-style error-message text-center">
+										<b>Wrong user credentials</b>
+									</div>
+									
+									
+								</div>
+							</div>
+						</form>
+					</fieldset>
+				</div>
+			</div>
+
+			<br>
+			&nbsp;<br>&nbsp;
+
+		</div>
+	</div>
+</div>
+
+
+<!-- <div class="modal fade" id="myModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+	data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header forgotPass-header">
+				<h4 class="modal-title" id="myModalLabel">Forgot Password ?</h4>
+			</div>
+
+			<div class="modal-body">
+				<form role="form" id="myForm" method="post">
+					<div class="form-group row">
+						<div class="col-md-12 forgotPassUsername">
+							<label>Username</label>
+						</div>
+						<div class="col-md-12">
+							<div class="input-sec">
+								<input type="text" class="form-control" id="username"
+									placeholder="Enter username" [(ngModel)]="forgotpassEmailId"
+									name="uName" />
+								<div *ngIf="otpSentMessage"
+									style="display: inline-block; color: red; vertical-align: middle;"
+									id="usernameError" class="error-style">
+									{{otpSentMessage}}
+								</div>
+							</div>
+							<button type="submit" class="btn btn-default button-sec"
+								ng-blur="clearErrormsg(forgotpassEmailId,'emailOtpError')"
+								(click)="sendOTP(forgotpassEmailId)">Generate OTP
+							</button>
+						</div>
+					</div>
+					<div class="form-group row" *ngIf="otpSent">
+						<div class="col-md-12 col-sm-10 forgotPassUsername">
+							<label>OTP sent to your username Id</label>
+						</div>
+						<div class="col-md-12">
+							<div class="input-sec">
+								<input type="text" class="form-control otpmatchedpng" id="otp" only-six-digits
+									placeholder="Enter OTP" [(ngModel)]="forgotpassOTP" name="otp"  />
+
+							</div>
+							<button type="submit" class="btn btn-default button-sec"
+								(click)="sendOTP(forgotpassEmailId)">Resend OTP</button>
+						</div>
+					</div>
+
+					<div class="form-group row" *ngIf="otpSent">
+						<div class="col-md-12 col-sm-10 forgotPassUsername">
+							<label>Set Password</label>
+						</div>
+						<div class="col-md-12">
+							<div class="input-sec">
+								<input type="password" class="form-control" id="newpasswordId"
+									(change)="otpSentMessage = null" placeholder="Enter your new password"
+									[(ngModel)]="newpassword" name="newpassword" data-toggle="password" />
+							</div>
+							<button type="submit" class="btn btn-default button-sec" (click)="setPass()">Submit</button>
+						</div>
+						<div class=col-md-12>
+							<div *ngIf="updateMessage"
+								style="display: inline-block; color: red; vertical-align: middle;"
+								id="updateMessageError" class="error-style">
+								{{updateMessage}}
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" (click)="clearInput()">
+					Close</button>
+			</div>
+		</div>
+	</div>
+</div> -->
+<!-- end forgot password modal  -->
+<div id="infoMessage" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog">
+		<!-- Modal content -->
+		<div class="modal-content">
+			<div class="modal-body text-center">
+				<div class="infohead"><img alt="" src="assets/images/icons/Messages_info_icon.svg"
+						style="width: 25px;margin-top: -5px;">&nbsp; INFO</div>
+				<!-- <div class="warnbody">{{infoMsg}}</div> -->
+				<div class="warnbody">Warning</div>
+				<button type="button" class="btn errorOk" ng-click="redirect()">Ok</button>
+			</div>
+		</div>
+	</div>
+</div>

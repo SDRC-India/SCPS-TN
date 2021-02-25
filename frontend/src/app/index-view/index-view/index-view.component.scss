@@ -1,0 +1,55 @@
+
+.label-btn{
+    margin-top: 1.9em;
+    border-radius: 0;
+    padding: 4px 15px;
+}
+.sector-selection{
+    max-width: 271px;
+    margin-left: 20px;
+}
+.sector-container{
+    margin: 30px 0;
+    padding: 32px 0 20px;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+}
+.exportTableData{
+    padding: 5px 20px;
+    border: 1px solid #CCC;
+    text-decoration: none;
+}
+.legend {
+    margin-bottom: 6px;
+}
+.square-box {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background-color: #CCC;
+    margin-right: 10px;
+}
+.first-slice {
+    fill: #1a9641;
+    background-color: #1a9641;
+    color: #1a9641;
+}
+
+.second-slice {
+    fill: #a6d96a;
+    background-color: #a6d96a;
+}
+
+.third-slice {
+    fill: #fdae61;
+    background-color: #fdae61;
+}
+
+.fourth-slice {
+    fill: #cc7365;
+    background-color: #cc7365;
+}
+.fifth-slice {
+    fill: #d7191c;
+    background-color: #d7191c;
+}

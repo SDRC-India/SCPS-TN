@@ -1,0 +1,117 @@
+.submissionPageInfo {
+
+	padding: 6px 60px;
+	background-color: #FFF;
+	box-shadow: 0px 1px 5px 1px #CCC;
+	height: 41px;
+	top: -162px !important;
+	right: -71%;
+}
+
+#dataTable thead {
+    background-color: #57aef6;
+}
+
+.submissionfacilityDetails {
+	margin-top: 10px !important;
+}
+
+.submissionmgmt-serial {
+	position: relative;
+	text-align: center !important;
+}
+
+.submissionmgmt-date {
+	position: relative;
+	text-align: center !important;
+}
+
+.submissionmgmt-action-history {
+	position: relative;
+	border-width: 1px 0px 1px;
+	text-align: center !important;
+}
+
+.submissionmgmt-lastmodified {
+	position: relative;
+	border-width: 1px 0px 1px;
+	text-align: center !important;
+}
+
+.submissionmgmt-action-preview-edit {
+	position: relative;
+	text-align: center !important;
+}
+
+.submissionmgmt-date-td {
+	text-align: center !important;
+}
+
+.submissionmgmt-action-history-td {
+	border-width: 1px 0px 1px;
+	text-align: center !important;
+}
+
+.submissionmgmt-last-modified-td {
+	border-width: 1px 0px 1px;
+	text-align: center !important;
+}
+
+.submissionmgmt-action-preview-edit-td {
+	border: 1px solid #a4cada;
+	border-bottom: 1px solid #909798;
+	background-color: rgba(0, 0, 0, .0001) !important;
+}
+
+.btnMarginzero {
+	margin: 0 !important;
+	width: 100%;
+}
+
+.submanagemnt>tbody>tr>td {
+	padding: 10px !important;
+	font-size: 15px;
+}
+/* .submsnDetailsModal */
+/* { */
+/* 	top: -115px; */
+/* } */
+.submsnDetailsTableeModal {
+	width: 175%;
+	margin-left: -229px;
+}
+
+.no_records {
+	text-align: center;
+	color: #eb2c0a;
+	box-shadow: -1px 1px 11px 0px #9E9E9E;
+	padding: 100px;
+}
+.page-heading{
+    text-align: left;
+    font-size: 28px;
+	color: #333;
+	
+    margin: 30px 0;
+    font-weight: 500;
+    border-bottom: 2px solid #333;
+    position: relative;
+}
+// .page-heading::after {
+// 		margin: 0;
+// 		padding: 0;
+// 		right: 0;
+// 		bottom: -2px;
+// 		position: absolute;
+// 		content: "";
+// 		height: 2px;
+// 		width: 70%;
+// 		background: #f8ce4a;
+// }
+.newentry{
+	max-width: 200px;
+	margin: 20px 15px;
+}
+.newentry-cont{
+	text-align: right;
+}

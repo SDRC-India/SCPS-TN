@@ -1,0 +1,141 @@
+.header-fixed { 
+    position: absolute; 
+    display:none;
+    z-index: 1;
+    overflow: hidden;
+    margin-right: 15px;
+    background-color: #57aef6;
+    
+    // width: auto;
+}
+.header-fixed .th.ng-star-inserted {
+    height: 100%;
+    float: left;
+    background-color: #234a7c;
+    color: #FFF;
+    border-left: 1px solid #FFF;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    padding-top: .75rem;
+    display: inline;
+}
+.parent-tabl-container{
+    position: relative;
+}
+
+table thead{
+    background-color: #57aef6;
+    color: #FFF;
+}
+td{
+    text-align: center;
+}
+table thead th{
+    vertical-align: middle;
+    text-align: center;
+}
+.pagination-view
+{
+    float:right;
+}
+#myInput {
+    width: 100%;
+    border-radius: 0;
+    font-size: 16px; 
+    padding: 7px 20px 12px 30px;
+    font-style: inherit;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    box-shadow: 0px 0px 2px 0px;
+}
+.table-btn.search .form-group{
+    position: relative;
+}
+.table-btn.search .form-group:before {
+    position: absolute;
+    font-family: 'FontAwesome';
+    top: 5px;
+    left: 7px;
+    color: #9c9c9c;
+    content: "\f002";
+  }
+
+.search-area
+{
+    font-style: italic;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+input[type="text"] 
+{
+    font-style:italic;
+}
+.table-btn .btn-excel, .table-btn .btn-pdf{
+    margin-bottom: 16px;
+    background-color: #357080;
+    color: #FFF;
+    border-radius: 0;
+}
+.btn-excel:focus, .btn-excel:active{
+    outline: none !important;
+    border: none !important;
+}
+.fa-sorting{
+    cursor: pointer;
+}
+.table-btn {
+    display: inline-block;
+    float: right;
+    margin: 0 5px;
+    // margin-bottom: 15px;
+}
+.fixedcontainer{
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+}
+th{
+    min-width: 200px;
+}
+
+
+.hyperlink
+{
+    color: #007bff !important;
+    cursor: pointer;
+}
+
+.hyperlink:hover
+{
+    text-decoration: underline !important;
+    color:#126ac7 !important;
+}
+.reset{
+    background-color: #57aef6;
+    color: white;
+    margin-left: 15px;
+    border-radius: 0;
+    height: 33px;
+    padding: 5px;
+}
+.clear{
+    font-weight: 600;
+    font-size: 19px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+}
+.district-filter{
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 23%;
+    float: left;
+}
+
+.table
+{
+    font-size: 14px;
+}

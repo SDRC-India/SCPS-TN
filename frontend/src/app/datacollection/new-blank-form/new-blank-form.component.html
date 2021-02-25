@@ -1,0 +1,225 @@
+
+
+<div>
+  <div class="mob-left-list" (click)="showLists($event);">
+    <img src="assets/images/menu-icon.png" width="40px">
+  </div>
+  <div class="backed-drop" (click)="hideLists()"></div>
+  <div class="col-md-3 col1 left-list left-side-scroll" (click)="hideLists()">
+
+    <div class="row">
+        <div class="col-md-12 lang-selection">
+          <mat-button-toggle-group #group="matButtonToggleGroup" name="language" appearance="legacy" [(ngModel)]="selectedLanguage" aria-label="Font Style" (change)="changeLanguage(group.value)">
+              <mat-button-toggle value="EN_UK">Engilsh</mat-button-toggle>
+              <mat-button-toggle value="TAMIL">Tamil</mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+          <ul class="data-heads">
+            <div>
+              <li  *ngFor="let sectionHeader of sectionNames; let i = index" [ngClass]="['data-head-list',sectionHeader == sectionHeading?'sectionActivated':'',sectionHeader == sectionHeading?'active':'']" (click)="sectionSelected(sectionHeader)">
+                <span [ngClass]="['list-span',sectionHeader == sectionHeading? 'underline':'']"><a>{{sectionHeader.includes('_')?sectionHeader.split('_')[1]:sectionHeader}}</a></span>
+              </li>
+            </div>
+              
+            
+            </ul>
+      </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center submission-btn">
+          <button class="save" mat-raised-button color="primary" [disabled]="disableStatus" ion-button block (click)="onSave('save')">Save</button>
+          <button class="finalize" mat-raised-button color="primary" [disabled]="disableStatus" ion-button block (click)="onSave('finalized')">Submit</button>
+       
+      </div>
+  </div>
+  </div>
+  
+  <div class="col-md-9 col2 offset-md-3" #scrollId>
+    <div class="row">
+      <div class="form-facility" *ngIf="sessionMap">{{sessionMap?.sessionMap?.assignedFacility}}</div>
+    <div class="form-timeperiod">{{formTimeperiod}}</div>
+    </div>
+    <div *ngIf="subSections">
+      <div *ngFor="let subSectionMap of dataSharingService.getKeys(subSections[0]); ">
+        <div class="row">
+          <div class="col-md-12 padding-left" padding-left>
+              <h3 class="page-heading"> {{subSectionMap.includes('_')?subSectionMap.split('_')[1]:subSectionMap}}</h3>
+          </div>
+        </div>
+         <div *ngFor="let question of subSections[0][subSectionMap]; let i = index" [ngClass]="['form-group',(question.displayComponent == true) ? '':'d-none',(question.dependecy == true)? 'leftMargin':'']">
+          <div [ngSwitch]="question.controlType" class="col-md-12">
+
+            <div [ngClass]="['row',question.requiredMessage!=null || question.showErrMessage?'boxErrorClass':'', question.controlType=='heading' && i!=0? 'indicator-head':'', question.controlType!='heading' ? 'no-margin':'']">
+              <div class="col-md-7">
+                <label class="ksp_item_lable padding-rt-10" [attr.for]="question.columnName" >
+                  <strong *ngIf="(question.controlType == 'heading' || question.controlType == 'beginrepeat' 
+                  || question.controlType == 'tableWithRowWiseArithmetic') || question.label?.split(')')[0].split('.').length <= 3" class="indicator-head-label">{{question.label}}  </strong>
+
+                  <span  *ngIf="question.controlType != 'heading' 
+                  && question.controlType != 'beginrepeat' && question.controlType != 'tableWithRowWiseArithmetic' && question.label?.split(')')[0]?.split('.').length > 3">
+                  {{question.label}}
+                </span>
+                  <strong *ngIf="question.mandatory == 'yes'" style="color:red">*</strong>
+                </label>
+              </div>
+              <div class="col-md-5 content"  *ngIf="question.controlType != 'beginrepeat' && question.controlType != 'tableWithRowWiseArithmetic'">
+                <mat-form-field *ngSwitchCase="'textbox'" >
+                  <input matInput   [disabled]="(disableStatus || question.disabled)" [id]="question.columnName"
+                  [ngClass]="[question.type == 'tel' || question.type == 'doubledecimal'  ? 'no-spinners':'']"  min="0" [maxLength]="question.maxLength? question.maxLength:10" 
+                  [type]="question.type" [(ngModel)]="question.value"  
+                  (paste)="onPaste(question)" 
+                  (keyup)="checkNumber($event,question.type,question);syncGroup(question,null,$event);"
+                  (keypress)="removeColor(question.columnName);numberInput($event,question);"
+                  (ngModelChange)="checkRelevance(question);
+                  clearFeatureFilters(question);
+                  compute(question);validateBeginRepeat(question.columnName);calculateScore(question)
+                  " 
+                  (blur)="checkConstraints(question);"
+                  >
+
+                </mat-form-field>
+               
+                  <textarea *ngSwitchCase="'textarea'" [disabled]="(disableStatus || question.disabled)" [id]="question.columnName"
+                    rows="5" cols="60"
+                  
+                  [(ngModel)]="question.value"  
+                ></textarea>
+          
+
+                <input *ngSwitchCase="'file'"   (change)="onFileChange($event, question)" #fileInput 
+                accept="application/pdf,application/vnd.ms-excel,application/msword" 
+                [id]="question.columnName" 
+                [type]="question.type"  
+                class="form-control" 
+                [ngClass]="'no-spinners'"
+                [disabled]="(disableStatus || question.disabled)"/>
+
+                <input *ngSwitchCase="'mfile'" class="fileChooserButton" (change)="onFileChange($event, question)"
+                  #fileInput multiple  accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                  [id]="question.columnName"
+                  [type]="question.type" class="form-control" [ngClass]="'no-spinners'" title=" " 
+                  [disabled]="(disableStatus || question.disabled)"/>
+                <div>
+                  <div *ngFor="let f of question.attachedFiles;let fi = index">
+     
+                    <div style="display: inline;">
+                    
+                        <label>{{f['fileName']}}</label>
+                        <button ion-button clear color="danger" (click)="deleteFile(fi,question)">
+                        </button>
+                   
+                    </div>
+                  </div>
+                  <label style="color: brown;word-wrap: break-word !important;white-space: pre-wrap;" 
+                  *ngIf="question.errorMsg!=null">{{question.errorMsg}}</label>
+                </div>
+
+                <input *ngSwitchCase="'uuid'" [disabled]="true" [id]="question.columnName" [type]="question.type"
+                  [(value)]="question.value"/>
+
+                <input *ngSwitchCase="'score-holder'" [disabled]="true" [id]="question.columnName" [type]="question.type"
+                  [(value)]="question.value" [ngClass]="[question.type == 'number' ? 'no-spinners':'']">
+               
+
+                <input *ngSwitchCase="'score-keeper'" [disabled]="true" [id]="question.columnName" [type]="question.type"
+                  [(value)]="question.value" [ngClass]="[question.type == 'number' ? 'no-spinners':'']">
+           
+
+                <input *ngSwitchCase="'sub-score-keeper'" [disabled]="true" [id]="question.columnName" [type]="question.type"
+                  [(value)]="question.value" [ngClass]="[question.type == 'number' ? 'no-spinners':'']">
+           
+
+                <input *ngSwitchCase="'Time Widget'" 
+                displayFormat="HH:mm" 
+                [(value)]="question.value" [id]="question.columnName"
+                (click)="open(question)" (ionBlur)="checkMinMax(question,null)" readonly=true
+                [disabled]="(disableStatus || question.disabled)">
+               
+
+
+                <mat-form-field *ngSwitchCase="'dropdown'" >
+                
+                  <mat-select  [multiple]="question.type==='checkbox'" [disabled]="(disableStatus || question.disabled)" [(value)]="question.value"
+                  interface="popover" #opt2  [id]="question.columnName"
+                  (selectionChange)="checkRelevance(question);syncGroup(question,null,$event);removeColor(question.columnName);
+                  calculateScore(question)">
+                  <div *ngFor="let opt of question.options">
+                    <mat-option class="customLabel" *ngIf="opt.visible == true" [value]="opt.key">
+                      {{opt.value}}
+                    </mat-option>
+                    </div>
+                  </mat-select>
+                </mat-form-field>
+             
+                </div>
+                <div style="margin-top:-10px;margin-left:15px " [ngClass]="question.requiredMessage!=null || question.showErrMessage?'margin-top':'d-none'">
+                  <label [ngClass]="question.showErrMessage?'errorMessageColor':'d-none'">{{question.cmsg}}</label>
+                  <label [ngClass]="question.requiredMessage?'errorMessageColor':'d-none'">{{question.requiredMessage}}</label>
+                </div>
+            </div>
+          
+          </div>
+          
+          
+          </div></div></div></div></div>
+
+<!--        
+              <div [ngClass]="[!question.errorFound ? 'd-none':'']" style="color: red;">{{question.errorMsg}}</div>
+            </div>
+            <div class="border-list" *ngSwitchCase="'beginrepeat'">
+              <div class="repeat-list">
+                <ion-row class="ksp-pointer">
+                  <ion-col md-10>
+                    <span>Add another</span>
+                  </ion-col>
+                  <button style="background: transparent" [disabled]="disableStatus || question.beginrepeatDisableStatus || question.beginRepeatMinusDisable" (click)="deleteLastWorker(question.key,question)">
+                    <ion-icon right name="remove-circle"></ion-icon>
+                  </button>
+                  <button style="background: transparent" [disabled]="disableStatus || question.beginrepeatDisableStatus" (click)="addAnotherWorker(question.key)">
+                    <ion-icon right name="add-circle"></ion-icon>
+                  </button>
+                </ion-row>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="modal fade" id="preview" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Preview Data</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body preview-body">
+            <div class="sec-container" *ngFor="let sec of dataSharingService.getKeys(data); let i = index;">
+              <h5>{{sec}}</h5>
+              <div class="subsec-container" *ngFor="let subsec of dataSharingService.getKeys(data[sec][0]); let j=index;">
+                <h6>{{subsec}}</h6>
+                <div class="q-container" *ngFor="let q of data[sec][0][subsec]; let k = index;">
+                  <div *ngIf='q.controlType == "heading"' class="kpi">{{q.label}}</div>
+                  <div *ngIf='q.controlType != "heading"' class="r-ind">{{q.label}} : <b>{{q.value}}</b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer text-center">
+            <div class="btn-c">
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+            <button class="preview-confirm" mat-raised-button color="primary" ion-button block (click)="sendData(sendingDataObj.type, sendingDataObj.formId, sendingDataObj.headerData, sendingDataObj.image)">Confirm</button>
+          <button class="preview-cancel" mat-raised-button color="primary" ion-button block data-dismiss="modal" >Cancel</button>
+          </div>
+        </div>
+        </div>
+        
+      </div>
+    </div>

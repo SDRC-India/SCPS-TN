@@ -1,0 +1,128 @@
+[
+    {
+      "areaNid": 33,
+      "value": 47.1,
+      "timeperiod": "Oct 2017",
+      "key": "LCL",
+      "areaName": "Telangana"
+    },
+    {
+      "areaNid": 33,
+      "value": 47.1,
+      "timeperiod": "Oct 2017",
+      "key": "Telangana",
+      "areaName": "Telangana"
+    },
+    {
+      "areaNid": 2,
+      "value": 69.6,
+      "timeperiod": "Oct 2017",
+      "key": "UCL",
+      "areaName": "Chhattisgarh"
+    },
+    {
+      "areaNid": 35,
+      "value": 44.7,
+      "timeperiod": "Nov 2017",
+      "key": "LCL",
+      "areaName": "Uttar Pradesh"
+    },
+    {
+      "areaNid": 33,
+      "value": 54.7,
+      "timeperiod": "Nov 2017",
+      "key": "Telangana",
+      "areaName": "Telangana"
+    },
+    {
+      "areaNid": 2,
+      "value": 67.2,
+      "timeperiod": "Nov 2017",
+      "key": "UCL",
+      "areaName": "Chhattisgarh"
+    },
+    {
+      "areaNid": 35,
+      "value": 41.8,
+      "timeperiod": "Dec 2017",
+      "key": "LCL",
+      "areaName": "Uttar Pradesh"
+    },
+    {
+      "areaNid": 33,
+      "value": 54.8,
+      "timeperiod": "Dec 2017",
+      "key": "Telangana",
+      "areaName": "Telangana"
+    },
+    {
+      "areaNid": 2,
+      "value": 77.1,
+      "timeperiod": "Dec 2017",
+      "key": "UCL",
+      "areaName": "Chhattisgarh"
+    },
+    {
+      "areaNid": 33,
+      "value": 46.8,
+      "timeperiod": "Jan 2018",
+      "key": "LCL",
+      "areaName": "Telangana"
+    },
+    {
+      "areaNid": 33,
+      "value": 46.8,
+      "timeperiod": "Jan 2018",
+      "key": "Telangana",
+      "areaName": "Telangana"
+    },
+    {
+      "areaNid": 2,
+      "value": 81.1,
+      "timeperiod": "Jan 2018",
+      "key": "UCL",
+      "areaName": "Chhattisgarh"
+    },
+    {
+      "areaNid": 33,
+      "value": 0.0,
+      "timeperiod": "May 2018",
+      "key": "LCL",
+      "areaName": "Telangana"
+    },
+    {
+      "areaNid": 33,
+      "value": 0.0,
+      "timeperiod": "May 2018",
+      "key": "Telangana",
+      "areaName": "Telangana"
+    },
+    {
+      "areaNid": 33,
+      "value": 0.0,
+      "timeperiod": "May 2018",
+      "key": "UCL",
+      "areaName": "Telangana"
+    },
+    {
+      "areaNid": 33,
+      "value": 24.9,
+      "timeperiod": "Jun 2018",
+      "key": "LCL",
+      "areaName": "Telangana"
+    },
+    {
+      "areaNid": 33,
+      "value": 24.9,
+      "timeperiod": "Jun 2018",
+      "key": "Telangana",
+      "areaName": "Telangana"
+    },
+    {
+      "areaNid": 2,
+      "value": 123.6,
+      "timeperiod": "Jun 2018",
+      "key": "UCL",
+      "areaName": "Chhattisgarh"
+    }
+  ]

@@ -1,0 +1,331 @@
+<div class="container-fluid">
+  <div class="row question-row">
+        <div class="mob-left-list" (click)="showLists();">Menu</div>
+      <div class="col-md-3 left-list">
+          <app-user-side-menu></app-user-side-menu>
+      </div>
+          <div class="col-md-9 content-sec offset-md-3">
+              <div class="col-md-12">
+                  <h2 class="user-heading">Update Facility</h2>
+                  <div class="note">* As per inconsistency in dates of facility master data, all date fields in the form are captured in open text fields. </div>
+                  <form class="all-fields row" #f="ngForm" (submit)="f.valid ?updateFacilityDetails(userManagementService.editFacilityDetails.facilityId,f):''">
+                    <div class="selection-fields col-md-4">
+                            <label for="usr">Facility Name<span style="color:red; font-weight:500;">*</span> :</label>
+                            <mat-form-field>
+                              <input matInput type="text" name="facilityname" [(ngModel)]="userManagementService.editFacilityDetails.name" required>
+                              <!-- <mat-autocomplete #auto="matAutocomplete">
+                                <mat-option *ngFor="let option of userManagementService.facilityNameForSuggestion" [value]="option">
+                                  {{option}}
+                                </mat-option>
+                              </mat-autocomplete> -->
+                              <mat-error class="padding-bottom ">
+                                  {{f.controls['facilityname']?.errors?.pattern ? 'Only characters, dot(.) and space can be accepted':'Please provide facility name'}}
+                              </mat-error>
+                          </mat-form-field>
+                        </div>
+                        <div class="selection-fields col-md-4">
+                          <label for="usr">Facility Type<span style="color:red; font-weight:500;">*</span> :</label>
+                          <mat-form-field>
+                              <mat-select name="fctype" [(ngModel)]="userManagementService.editFacilityDetails.designation.id" disabled required>
+                                      <mat-option *ngFor="let facility of userManagementService.facilityType" [value]="facility.id">
+                                              {{facility.name}}
+                                          </mat-option>
+                              </mat-select>
+                              <mat-error class="padding-bottom ">
+                                  Please provide facility type.
+                              </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Address<span style="color:red; font-weight:500;">*</span> :</label>
+                          <mat-form-field>
+                              <textarea matInput type="text" name="address" [(ngModel)]="userManagementService.editFacilityDetails.nameAndAddress" required></textarea>
+                              <mat-error class="padding-bottom ">
+                                  {{f.controls['address']?.errors?.pattern ? 'Spaces are not accepted':'Please provide Address'}}
+                              </mat-error>
+                          </mat-form-field>
+                         
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">District<span style="color:red; font-weight:500;">*</span> :</label>
+                          <mat-form-field>
+                              <mat-select name="dist" [(ngModel)]="selectedDistrictId" disabled required>
+                                  <mat-option *ngFor="let dist of userManagementService.areaDetails | areaFilter:3:2" [value]="dist.areaId">
+                                      {{dist.areaName}}
+                                  </mat-option>
+                              </mat-select>
+                              <mat-error class="padding-bottom ">
+                                  Please provide District
+                              </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Website Link:</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="weblink" [(ngModel)]="userManagementService.editFacilityDetails.contactDetails.websiteLink">
+                              <mat-error class="padding-bottom ">
+                                  {{f.controls['name']?.errors?.pattern ? 'Please provide valid Website Link':'Please provide valid Website Link'}}
+                              </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Name of Head:</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="noh" [(ngModel)]="userManagementService.editFacilityDetails.contactDetails.nameOfHead">
+                              <mat-error class="padding-bottom ">
+                                  {{f.controls['name']?.errors?.pattern ? 'Only characters, dot(.) and space can be accepted':'Please provide name of head'}}
+                              </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Contact No. :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="contact" name="mobile" [(ngModel)]="userManagementService.editFacilityDetails.contactDetails.phNo">
+                              <mat-error class="padding-bottom ">
+                                  {{f.controls['name']?.errors?.pattern ? 'Only digits can be accepted':'Please provide contact number'}}
+                              </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Email :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="email" [(ngModel)]="userManagementService.editFacilityDetails.contactDetails.emailId">
+                              <mat-error class="padding-bottom ">
+                                  {{f.controls['name']?.errors?.pattern ? 'Please provide valid email':'Please provide valid email'}}
+                              </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Establishment Date <span class="suggestions">(DD.MM.YYYY)</span> :</label>
+                          <!-- <mat-form-field>
+                              <input matInput [matDatepicker]="picker1" name="establishment"  [max]="convertToDate()" readonly [(ngModel)]="userManagementService.editFacilityDetails.establishmentDate">
+                              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                              <mat-datepicker #picker1></mat-datepicker>
+                          </mat-form-field> -->
+                          <mat-form-field>
+                          <input matInput type="text" name="establishment" [(ngModel)]="userManagementService.editFacilityDetails.establishmentDate">
+                        </mat-form-field>
+                        </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Expiry Date <span class="suggestions">(DD.MM.YYYY)</span> :</label>
+                          <mat-form-field>
+                          <input matInput type="text" name="expiry" [(ngModel)]="userManagementService.editFacilityDetails.expiryDate">
+                        </mat-form-field>
+                    </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Last Inspection Date <span class="suggestions">(DD.MM.YYYY)</span> :</label>
+                          <mat-form-field>
+                          <input matInput type="text" name="lastinspection" [(ngModel)]="userManagementService.editFacilityDetails.latestInspectionDate">
+                        </mat-form-field>
+                        </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Is complaint box placed :</label>
+                          <mat-form-field>
+                              <mat-select name="complaint" [(ngModel)]="userManagementService.editFacilityDetails.detailsOfComplaintBoxPlaced" >
+                                  <mat-option [value]="true"> Yes</mat-option>
+                                  <mat-option [value]="false"> No</mat-option>
+                              </mat-select>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Boys with age 0-6 yr :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="boys6" pattern="\d*" (change)="sumBoys()" [(ngModel)]="userManagementService.editFacilityDetails.numberOfChildrenPresent.boys0To6" maxlength="4">
+                              <mat-error class="padding-bottom ">
+                                  {{f.controls['name']?.errors?.pattern ? 'Only number can be accepted':'Only number can be accepted'}}
+                              </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Boys with age 7-11 yr :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="boys11" pattern="\d*" (change)="sumBoys()" [(ngModel)]="userManagementService.editFacilityDetails.numberOfChildrenPresent.boys7To11" maxlength="4">
+                              <mat-error class="padding-bottom ">
+                                      {{f.controls['name']?.errors?.pattern ? 'Only number can be accepted':'Only number can be accepted'}}
+                                  </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Boys with age 12-14 yr :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="boys14" pattern="\d*" (change)="sumBoys()" [(ngModel)]="userManagementService.editFacilityDetails.numberOfChildrenPresent.boys12To14" maxlength="4">
+                              <mat-error class="padding-bottom ">
+                                      {{f.controls['name']?.errors?.pattern ? 'Only number can be accepted':'Only number can be accepted'}}
+                                  </mat-error>
+                          </mat-form-field>
+                      </div>
+
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Boys with age 15-18 yr :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="boysyr18" pattern="\d*" (change)="sumBoys()" [(ngModel)]="userManagementService.editFacilityDetails.numberOfChildrenPresent.boys15To18" maxlength="4">
+                              <mat-error class="padding-bottom ">
+                                      {{f.controls['name']?.errors?.pattern ? 'Only number can be accepted':'Only number can be accepted'}}
+                                  </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Boys Total :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="boystotal" disabled pattern="\d*"[(ngModel)]="userManagementService.editFacilityDetails.numberOfChildrenPresent.boysTotal" maxlength="8">
+                              <mat-error class="padding-bottom ">
+                                      {{f.controls['name']?.errors?.pattern ? 'Only number can be accepted':'Only number can be accepted'}}
+                                  </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Girls with age 0-6 yr :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="girls6" pattern="\d*" (change)="sumGirls();" [(ngModel)]="userManagementService.editFacilityDetails.numberOfChildrenPresent.girls0To6" maxlength="4">
+                              <mat-error class="padding-bottom ">
+                                      {{f.controls['name']?.errors?.pattern ? 'Only number can be accepted':'Only number can be accepted'}}
+                                  </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Girls with age 7-11 yr :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="girls11" pattern="\d*" (change)="sumGirls();" [(ngModel)]="userManagementService.editFacilityDetails.numberOfChildrenPresent.girls7To11" maxlength="4">
+                              <mat-error class="padding-bottom ">
+                                      {{f.controls['name']?.errors?.pattern ? 'Only number can be accepted':'Only number can be accepted'}}
+                                  </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Girls with age 12-14 yr :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="girls12" pattern="\d*" (change)="sumGirls();" [(ngModel)]="userManagementService.editFacilityDetails.numberOfChildrenPresent.girls12To14" maxlength="4">
+                              <mat-error class="padding-bottom ">
+                                      {{f.controls['name']?.errors?.pattern ? 'Only number can be accepted':'Only number can be accepted'}}
+                                  </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Girls with age 15-18 yr :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="girls18" pattern="\d*" (change)="sumGirls();" [(ngModel)]="userManagementService.editFacilityDetails.numberOfChildrenPresent.girls15To18" maxlength="4">
+                              <mat-error class="padding-bottom ">
+                                      {{f.controls['name']?.errors?.pattern ? 'Only number can be accepted':'Only number can be accepted'}}
+                                  </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Girls Total :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="totalgirls" disabled pattern="\d*" [(ngModel)]="userManagementService.editFacilityDetails.numberOfChildrenPresent.girlsTotal" maxlength="8">
+                              <mat-error class="padding-bottom ">
+                                      {{f.controls['name']?.errors?.pattern ? 'Only number can be accepted':'Only number can be accepted'}}
+                                  </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Children with CWC order :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="withcwc" pattern="\d*" [(ngModel)]="userManagementService.editFacilityDetails.orderDetailsOfCWC.noOfChildrenWithOrdersOfCWC" maxlength="4">
+                              <mat-error class="padding-bottom ">
+                                  {{f.controls['name']?.errors?.pattern ? 'Only characters, dot(.) and space can be accepted':'Please provide no. of children with CWC order'}}
+                              </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Children without CWC order :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="withoutcwc" pattern="\d*" [(ngModel)]="userManagementService.editFacilityDetails.orderDetailsOfCWC.noOfChildrenWithoutOrdersOfCWC" maxlength="4">
+                              <mat-error class="padding-bottom ">
+                                  {{f.controls['name']?.errors?.pattern ? 'Only characters, dot(.) and space can be accepted':'Please provide no. of children without CWC order'}}
+                              </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Total no. of children residing in CCI :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="rcci" [(ngModel)]="userManagementService.editFacilityDetails.orderDetailsOfCWC.reasonsforChildrenResidingInTheCCIWithoutCWCOrder">
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Remarks :</label>
+                          <mat-form-field>
+                              <textarea matInput type="text" name="remark" [(ngModel)]="userManagementService.editFacilityDetails.otherRemarks"></textarea>
+                             
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Registration no. :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="rgno" [(ngModel)]="userManagementService.editFacilityDetails.registrationNo" >
+                          </mat-form-field>
+                      </div>
+                      <div class="selection-fields col-md-4">
+                          <label for="usr">Sanctioned strength :</label>
+                          <mat-form-field>
+                              <input matInput type="text" name="sanstrnth" [(ngModel)]="userManagementService.editFacilityDetails.sanctionedStrength" pattern="\d*" >
+                              <mat-error class="padding-bottom ">
+                                {{f.controls['name']?.errors?.pattern ? 'Only number can be accepted':'Only number can be accepted'}}
+                            </mat-error>
+                            </mat-form-field>
+                      </div>
+                        <!-- <div class="selection-fields col-md-6">
+                            <label for="usr">District<span style="color:red; font-weight:500;">*</span> :</label>
+                            <mat-form-field>
+                                <mat-select name="district" [(ngModel)]="selectedDistrictId" (selectionChange)="selectedFacilityId=undefined;getFacilities()" required>
+                                    <mat-option *ngFor="let dist of userManagementService.areaDetails | areaFilter:3:2" [value]="dist.areaId">
+                                        {{dist.areaName}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error class="padding-bottom ">
+                                    Please provide district name
+                                </mat-error>
+                            </mat-form-field>
+                        </div> -->
+                        <div class="form-group" [ngClass]="'col-md-6 mt-btn text-left'">
+                      <button class="btn btn-default proceed-btn user-submit" type="submit">Update</button>
+                  </div>
+                  
+              </form>
+              </div>
+          </div>
+  </div>
+
+  <div class="modal fade" id="successMatch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true" data-backdrop="static">
+      <div class="modal-dialog modal-notify modal-error" role="document">
+          <!--Content-->
+          <div class="modal-content">
+
+              <!--Body-->
+              <div class="modal-body confirm-body">
+                  <div class="text-center">
+                      <p> Facility Updated Successfully</p>
+                  </div>
+                  <button type="button" class="btn btn-secondary modal-btn cancel-btn" (click)="successModal()"
+                      >Ok</button>
+              </div>
+          </div>
+          <!--/.Content-->
+      </div>
+  </div>
+
+  <div class="modal fade" id="passNotMatch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true" data-backdrop="static">
+      <div class="modal-dialog modal-notify modal-error" role="document">
+          <!--Content-->
+          <div class="modal-content">
+              <!--Header-->
+              <div class="modal-header data-error">
+                  <p class="heading lead">Error</p>
+              </div>
+
+              <!--Body-->
+              <div class="modal-body">
+                  <div class="text-center">
+                      <p>{{validationMsg}}</p>
+                  </div>
+                  <button type="button" class="btn btn-secondary m-auto d-block modal-btn"
+                      data-dismiss="modal">Close</button>
+              </div>
+          </div>
+          <!--/.Content-->
+      </div>
+  </div>
+
+  

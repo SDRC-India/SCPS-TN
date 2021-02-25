@@ -1,0 +1,113 @@
+.dashboard-head{
+    margin-top: 20px;
+    padding: 0;
+    border-bottom: 2px solid #1792cf;
+}
+.dashboard-head::after {
+    margin: 0;
+    padding: 0;
+    right: 0;
+    bottom: -2px;
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 60%;
+    background: #28313d;
+}
+.dashboard-head h2{
+    font-size: 22px;
+}
+.quick-start-in {
+    width: 100%;
+    padding: 0 0 10% 0;
+    text-align: center;
+}
+.quick-rnd{
+    width:  8em;
+    height: 8em;;
+    padding: 0;
+    margin: 10% auto 7%;
+    display: block;
+}
+.rnd{
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    border: 2px solid #28313d;
+    // background-color: #e5efbd;
+
+}
+.sub-title {  
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;   
+}
+.count {  
+    text-align: center; 
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.mat-card {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.map{
+    height: 100%;
+    // width: 900px;
+}
+agm-map {
+    height: 30rem;
+}
+
+.close-btn{
+    background-color: #1792cf;
+}
+.modal-dialog {
+    margin-top: 0.8rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0.5rem !important;
+}
+.modal-body {
+  padding-bottom: 0rem;
+}
+.modal-content{
+    margin-top: 3%;
+}
+mat-label.ng-star-inserted {
+    padding-left: 5px;
+}
+@media(max-width: 608px){
+    .dashboard-head h2 {
+        font-size: 20px;
+    }
+    .sub-title {
+        font-size: 18px;
+    }
+    .count {
+        font-size: 22px;
+    }
+
+}
+@media(max-width: 560px){
+    .quick-start-in{
+        padding: 0;
+    }
+    .quick-rnd {
+        margin: 5% auto 2%;
+    }
+
+}
+
+.remove-button {
+    top: -18px;
+    cursor: pointer !important;
+}
+
+
+
+.quick-note{
+    float: right;
+    font-size: 16px !important;
+}

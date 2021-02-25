@@ -1,0 +1,18 @@
+<div>
+  <ul class="data-heads">
+    <li class="data-head-list"  routerLink="/user-management" [ngClass]="{'active': router.url=='/user-management'}">
+      <span class="list-span"><a class="active" >Create New User</a></span>
+    </li>             
+    <li class="data-head-list" routerLink="/reset-password" [ngClass]="{'active': router.url=='/reset-password' || router.url=='/edit-user'}">
+      <span class="list-span"><a >Edit User</a></span>
+    </li> 
+    <li class="data-head-list" routerLink="/change-password" [ngClass]="{'active': router.url=='/change-password'}">
+      <span class="list-span"><a >Change Password</a></span>
+    </li>
+    <li class="data-head-list" routerLink="/add-facility" [ngClass]="{'active': router.url=='/add-facility' || router.url=='/edit-facility'}">
+      <span class="list-span"><a >Facility Management</a></span>
+    </li>      
+  </ul>
+</div>
+
+

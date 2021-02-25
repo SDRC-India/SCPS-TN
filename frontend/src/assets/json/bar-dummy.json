@@ -1,0 +1,150 @@
+[
+    [
+        {
+            "axis": "2018.12",
+            "value": "0.75",
+            "timePeriod": "2018.12",
+            "areaCode": "IND033",
+            "areaName": "Tamil Nadu",
+            "areaNid": 2,
+            "subsectorName": "Index -  Non Institutional Care ( Results for Children )"
+        },
+        {
+            "axis": "2018.12",
+            "value": "0.50",
+            "timePeriod": "2018.12",
+            "areaCode": "IND033",
+            "areaName": "Tamil Nadu",
+            "areaNid": 2,
+            "subsectorName": "Index -  Pendency of Cases ( Results for Children )"
+        },
+        {
+            "axis": "2018.12",
+            "value": "0.70",
+            "timePeriod": "2018.12",
+            "areaCode": "IND033",
+            "areaName": "Tamil Nadu",
+            "areaNid": 2,
+            "subsectorName": "Index -  Intervention ( Results for Children )"
+        },
+        {
+            "axis": "2018.12",
+            "value": "0.75",
+            "timePeriod": "2018.12",
+            "areaCode": "IND033",
+            "areaName": "Tamil Nadu",
+            "areaNid": 2,
+            "subsectorName": "Index -  Follow Up ( Results for Children )"
+        },
+        {
+            "axis": "2018.12",
+            "value": "0.50",
+            "timePeriod": "2018.12",
+            "areaCode": "IND033",
+            "areaName": "Tamil Nadu",
+            "areaNid": 2,
+            "subsectorName": "Index -  Human Resources ( Human Resources )"
+        },
+        {
+            "axis": "2018.12",
+            "value": "0.50",
+            "timePeriod": "2018.12",
+            "areaCode": "IND033",
+            "areaName": "Tamil Nadu",
+            "areaNid": 2,
+            "subsectorName": "Index -  Structures at district, block and Village ( ICPS Structures and Functionalities )"
+        },
+        {
+            "axis": "2018.12",
+            "value": "0.50",
+            "timePeriod": "2018.12",
+            "areaCode": "IND033",
+            "areaName": "Tamil Nadu",
+            "areaNid": 2,
+            "subsectorName": "Index -  Management, Coordination and Operation ( ICPS Structures and Functionalities )"
+        },
+        {
+            "axis": "2018.12",
+            "value": "0.76",
+            "timePeriod": "2018.12",
+            "areaCode": "IND033",
+            "areaName": "Tamil Nadu",
+            "areaNid": 2,
+            "subsectorName": "Index -  Finance and Budget Management ( ICPS Structures and Functionalities )"
+        }
+    ],
+    [
+        {
+            "axis": "2019.01",
+            "value": "0.50",
+            "timePeriod": "2019.01",
+            "areaCode": "IND033",
+            "areaName": "Tamil Nadu",
+            "areaNid": 2,
+            "subsectorName": "Index -  Non Institutional Care ( Results for Children )"
+        },
+        {
+            "axis": "2019.01",
+            "value": "0.50",
+            "timePeriod": "2019.01",
+            "areaCode": "IND033",
+            "areaName": "Tamil Nadu",
+            "areaNid": 2,
+            "subsectorName": "Index -  Pendency of Cases ( Results for Children )"
+        },
+        {
+            "axis": "2019.01",
+            "value": "0.50",
+            "timePeriod": "2019.01",
+            "areaCode": "IND033",
+            "areaName": "Tamil Nadu",
+            "areaNid": 2,
+            "subsectorName": "Index -  Intervention ( Results for Children )"
+        },
+        {
+            "axis": "2019.01",
+            "value": "0.50",
+            "timePeriod": "2019.01",
+            "areaCode": "IND033",
+            "areaName": "Tamil Nadu",
+            "areaNid": 2,
+            "subsectorName": "Index -  Follow Up ( Results for Children )"
+        },
+        {
+            "axis": "2019.01",
+            "value": "0.50",
+            "timePeriod": "2019.01",
+            "areaCode": "IND033",
+            "areaName": "Tamil Nadu",
+            "areaNid": 2,
+            "subsectorName": "Index -  Human Resources ( Human Resources )"
+        },
+        {
+            "axis": "2019.01",
+            "value": "0.38",
+            "timePeriod": "2019.01",
+            "areaCode": "IND033",
+            "areaName": "Tamil Nadu",
+            "areaNid": 2,
+            "subsectorName": "Index -  Structures at district, block and Village ( ICPS Structures and Functionalities )"
+        },
+        {
+            "axis": "2019.01",
+            "value": "0.50",
+            "timePeriod": "2019.01",
+            "areaCode": "IND033",
+            "areaName": "Tamil Nadu",
+            "areaNid": 2,
+            "subsectorName": "Index -  Management, Coordination and Operation ( ICPS Structures and Functionalities )"
+        },
+        {
+            "axis": "2019.01",
+            "value": "0.50",
+            "timePeriod": "2019.01",
+            "areaCode": "IND033",
+            "areaName": "Tamil Nadu",
+            "areaNid": 2,
+            "subsectorName": "Index -  Finance and Budget Management ( ICPS Structures and Functionalities )"
+        }
+    ]
+]

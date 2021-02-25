@@ -1,0 +1,41 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 dashboard-head">
+      <h2>{{area}} at a glance <span class="quick-note"><span >*</span>  {{quickStatNote}}</span> </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-sm-6 col-12 circle" *ngFor="let quick of quickStarts">
+      <div class="quick-start-in">
+        <div class="quick-rnd">
+          <img class="rnd" [src]="quick.img">
+        </div>
+        <span class="sub-title">{{quick.label}}</span>
+        <br>
+        <span class="count">{{quick.value}}</span>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="col-md-12 dashboard-head">
+      <h2>List of CCIs</h2>
+    </div>
+    <mat-card>
+
+
+      <div class="table-view">
+        <sdrc-table [id]="'tab1'" [rowData]="tableData" [columnData]="tableColumns" [maxTableHeight]="'550px'"
+          [sorting]="true" [sortExcludeColumn]="['action', 'rowId']" [isPaginate]="true" [itemsPerPage]="10"
+          [headerFixed]="true" [searchBox]="true" [selectDropdown]="true" [downloadPdf]="false" [downloadExcel]="true" [districts]="districts" (dropdownSelected)="districtSelected($event)"
+          [excelName]="excelFileName" [excelHeadings]="[{'State/District':excelFileName}] ">
+        </sdrc-table>
+      </div>
+      
+    </mat-card>
+
+
+
+</div>
+

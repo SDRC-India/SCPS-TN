@@ -1,0 +1,250 @@
+<div class="container-fluid min-hieght">
+   <div class="row">
+      <div class="col-md-2 ">
+          <h2 class="indicator-header evm-font-blue" data-html2canvas-ignore="true">Dashboard</h2>
+      </div>
+      <div class="col-md-10 "> 
+          <mat-tab-group (selectedTabChange)="selectParentSector(sectors[sectorGroup.selectedIndex])" #sectorGroup>
+              <mat-tab *ngFor="let sector of sectors;let i = index" [label]="sector.value" (click)="selectParentSector(sector)"></mat-tab>
+            </mat-tab-group>
+  </div>
+  
+  </div>
+
+  
+  <div class="row">
+  
+    <div class="col-md-3">
+
+        <!-- <mat-button-toggle-group [(ngModel)]="selectedIndicatorType" (valueChange)= "changeIndicatorType()" [hidden]= "!isActualIndicator" name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle [value]="legacyIndicatorType">Legacy</mat-button-toggle>
+            <mat-button-toggle [value]="appV2IndicatorType">2019</mat-button-toggle>
+          </mat-button-toggle-group> -->
+          <div class="appTypes">
+          <div  (click)="changeIndicatorType(legacyIndicatorType)" class="appType" [hidden]= "!isActualIndicator"
+          [ngClass]="selectedIndicatorType == legacyIndicatorType ? 'selected': ''">
+          Till Sep-19
+        </div>
+
+        <div  (click)="changeIndicatorType(appV2IndicatorType)" class="appType" [hidden]= "!isActualIndicator"
+          [ngClass]="selectedIndicatorType == appV2IndicatorType ? 'selected': ''">
+          Oct-19 Onwards
+        </div>
+          </div>
+
+
+      <div class="selection-container sector-selection" *ngIf="subsectors && subsectors.length">
+          <label for="usr">Sub-Sector<span style="color:red; font-weight:500;">*</span> :</label>
+        <mat-form-field>
+            <!-- <mat-label>Select  Sector</mat-label> -->
+          <mat-select [(ngModel)]="selectedSubsector" name="selectedSubSector"
+            (selectionChange)="selectSector(selectedSubsector)">
+            <ngx-mat-select-search  [placeholderLabel]="'Search Sector'" [noEntriesFoundLabel]="'No Result found'" [(ngModel)]="searchSector" ></ngx-mat-select-search>
+            <mat-option *ngFor="let subsector of (subsectors|searchValue:searchSector:'value'); let i = index;" [value]="subsector">
+              {{subsector.value}}
+            </mat-option>
+          </mat-select>
+
+        </mat-form-field>
+      </div>
+
+
+      <div class="selection-container sector-selection" *ngIf="indicators && indicators.length">
+          <label for="usr">Indicator<span style="color:red; font-weight:500;">*</span> :</label>
+        <mat-form-field>
+            <!-- <mat-label>Select a Indicator</mat-label> -->
+          <mat-select [(ngModel)]="selectedIndicator" name="selectedIndicator"
+            (selectionChange)="selectIndicator(selectedIndicator)" [matTooltip]="selectedIndicator.value">
+            <ngx-mat-select-search  [placeholderLabel]="'Search Indicator'" [noEntriesFoundLabel]="'No Result found'" [(ngModel)]="searchIndicator" ></ngx-mat-select-search>
+            <mat-option *ngFor="let indicator of (indicators|searchValue:searchIndicator:'value'); let i = index;" [value]="indicator">
+              {{indicator.value}}
+            </mat-option>
+          </mat-select>
+
+        </mat-form-field>
+      </div>
+
+
+      <div class="selection-container sector-selection" *ngIf="timeformats && timeformats.length">
+          <label for="usr">Time Period<span style="color:red; font-weight:500;">*</span> :</label>
+        <mat-form-field>
+            <!-- <mat-label>Select Timperiod</mat-label> -->
+          <mat-select [(ngModel)]="selectedTimeperiod" name="selectedTimeperiod"
+            (selectionChange)="selectTimeperiod(selectedTimeperiod)">
+            <ngx-mat-select-search  [placeholderLabel]="'Search Timeperiod'" [noEntriesFoundLabel]="'No Result found'" [(ngModel)]="searchTimePeriod" ></ngx-mat-select-search>
+            <mat-option *ngFor="let timeformat of (timeformats|searchValue:searchTimePeriod:'value'); let i = index;" [value]="timeformat">
+              {{timeformat.value}}
+            </mat-option>
+          </mat-select>
+
+        </mat-form-field>
+      </div>
+  
+  <!-- <div id="leftfilter" class="left-div col-sm-12" *ngIf="thematicData">
+  <section id="tbsection" class="topthree"
+  *ngIf="thematicData.topPerformers">
+  <div class="mar-bot-5 topPerforme768" *ngIf="thematicData.topPerformers">
+    <h4 class="top">Top 3</h4>
+    <ul class="topperformers">
+      <li *ngFor="let performer of thematicData.topPerformers"><span
+        class="performerValue"> {{performer}}</span></li>
+    </ul>
+  </div>
+  <div class="topPerforme768" ng-show="bottomPerformers.length > 0">
+    <h4 class="bottom">Bottom 3</h4>
+    <ul class="bottomperformers">
+      <li *ngFor="let performer of thematicData.bottomPerformers"><span
+        class="performerValue"> {{performer}}</span></li>
+    </ul>
+  </div>
+  </section>
+  </div> -->
+    </div>
+  
+  
+  <div class="col-md-5">
+      <div class="map_popover"><div class="map_popover_content"></div></div>
+           <app-thematic-map *ngIf="mapData" [mapData]="thematicData?thematicData.dataCollection:[]" (onAreaSelection)="clickHandler($event)"></app-thematic-map>
+    </div>
+  
+    <!-- legend-top-bottom removed class -->
+    <div class="col-md-3 offset-md-1 ">
+
+          <div class="row">
+              <div class="col-xs-12 col-md-7  ">
+                  <button  btn id="pdfDownloadBtn" (click)="downloadMap(thematicData,selectedIndicator,selectedSource,selectedTimeperiod)"><i class="fa fa-lg fa-download"></i> Download PDF</button>
+              </div>
+            
+          </div>
+
+          <div class="row " *ngIf="selectedIndicator">
+              <div class="col-xs-12 col-md-9  indicator-name">
+                  <span>{{selectedIndicator.value}}</span>
+              </div>
+            
+          </div>
+
+          <div class="row legendHolder">
+            <div class="col-xs-12 col-md-6  ">
+              
+                    <img class="img-responsive " alt="Responsive image"
+                      src="assets/images/north-pointer.png">
+  
+            </div>
+        </div>
+
+            <div class="col-xs-12 col-md-6 "><br/> <h6 class="legend-heading ">LEGEND</h6></div>
+            <div class="row col-xs-12 col-md-7 ">
+                  <section id="legendsection" class="legends">
+                     
+                      <ul *ngIf="legendData">
+                          <div  *ngFor ="let legend of legendData.legends">
+                              <li  class="legend_list ">
+                                  <div class="{{legend.value}} legnedblock"> </div>    
+                                  <span	class="legend_key">{{legend.key}}</span>                                          
+                                 </li> 
+                          </div>
+                      </ul>  
+                    </section> 
+              </div>
+
+        
+        </div>
+      </div>
+
+      <div class="row footnote">
+        <div class="col-md-9 offset-md-3">
+        <span class="note">Note :</span> <span>{{footNote}}</span>
+      </div>
+      </div>
+  
+  <div class="trend-chart"  *ngIf="lineChartVisible" id="lineChartId">
+    <button  id="lineChartClose" class="close trend-close" aria-hidden="true" type="button" (click)="closeViz()" style="color:#fff;">
+        <i class="fa fa-window-close" aria-hidden="true"></i>
+    </button>
+    <div class="row" style="padding: 10px; color: #fff;">
+      <div class="col-sm-2 col-md-2">{{selectedAreaFromMap.areaName}} <br/><br/>
+        <label style="font-size: 10px;"
+        title="Source"
+       *ngIf="lineChartData.length">
+        {{lineChartData[0][0].source}} <br>
+      </label>
+    </div>
+      <div class="col-sm-6"><span >{{indicatorName}}%</span></div>
+  
+      <div class="col-sm-2"> <span>Rank:</span><span >
+        {{selectedAreaFromMap.rank}}</span><span class="rank">
+        <i class="of_txt"> of </i>&nbsp; {{thematicData.dataCollection.length}}
+      </span></div>  
+  
+      <div class="col-sm-2" *ngIf="lineChartData[0].length>1">
+        <span>{{lineChartData[0][0].percentageChange}}%</span>
+                  <i class="fa fa-arrow-up {{lineChartData[0][0].cssClass}}" aria-hidden="true"
+                   *ngIf="lineChartData[0][0].cssClass=='uptrend'"></i> 
+  
+                    <i class="fa fa-arrow-down {{lineChartData[0][0].cssClass}}" aria-hidden="true"
+                    *ngIf="lineChartData[0][0].cssClass=='downtrend'"></i>
+                  
+                    <i class="fa fa-arrows-h" aria-hidden="true"
+                    *ngIf="!lineChartData[0][0].cssClass"></i>        
+                    
+                    <div class="pdfBtnforTrend" id="trendPdfButton">
+                        <button type="button" id="pdfDownloadBtnForIndex"
+                          class="col-sm-2 btn btn-link pdfdownloadTrend"
+                          title="Download PDF for Trend Chart of selected District"
+                          (click)="sdrc_export()" [ngClass]="lineChartData[0][0].length==0 ? 'disabled':''">
+                          <i class="fa fa-lg fa-download"></i> &nbsp;
+                        </button>
+              </div>
+      </div>
+
+      
+    </div>
+    <div class="row col-md-12" style="border-bottom: 1px solid #fff;"></div>
+    <app-dashboard-line-chart *ngIf="lineChartData" [lineData]="lineChartData"></app-dashboard-line-chart>
+  </div>
+   
+  <br/><br/> <br/><br/> <br/><br/>
+  <div class="row">
+
+    <div class="col-md-8  offset-md-3">
+
+      <!-- <table mat-table #table dashboardtbl [dataSource]="dataSource" matSort class="mat-elevation-z8"  >
+
+      
+        <ng-container  matColumnDef="sl">
+          <th mat-header-cell *matHeaderCellDef >    No.    </th>
+          <td mat-cell *matCellDef="let element">    {{element.position}}    </td>
+        </ng-container>
+ 
+     
+        <ng-container matColumnDef="areaName">
+          <th mat-header-cell *matHeaderCellDef >    District    </th>
+          <td mat-cell *matCellDef="let element"> {{element.areaName}} </td>
+        </ng-container>
+
+     
+        <ng-container matColumnDef="value">
+          <th mat-header-cell *matHeaderCellDef  >   Percent   </th>
+          <td mat-cell *matCellDef="let element">   {{element.value}}   </td>
+        </ng-container>
+
+       
+        <ng-container matColumnDef="rank">
+          <th mat-header-cell *matHeaderCellDef > Rank </th>
+          <td mat-cell *matCellDef="let element"> {{element.rank | number}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table> -->
+
+      <sdrc-table  [columnData]="displayedColumns" [rowData]="dataSource" [sorting]="true"></sdrc-table>
+      
+    </div>
+
+ </div>
+ 
+
+  </div>
+

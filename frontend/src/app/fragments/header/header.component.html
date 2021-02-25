@@ -1,0 +1,154 @@
+<!-- <nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<img class="navbar-brand" class="scpsTlogo img-responsive" src="assets/images/logos/SCPS LOGO 1.png" />
+			<h2 class="scps_header">State Child Protection Society</h2>
+			<h3 class="scps_subheader">Tamil Nadu</h3>
+		</div>
+
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav Welcome-user">
+				<li *ngIf="!!app.checkLoggedIn()">Welcome {{app.getUserDetails().username}}</li>
+			</ul>
+			<ul class="nav navbar-nav"> -->
+<!-- <li class="active"><a routerLink="/">Home</a></li>							 -->
+<!-- <li [ngClass]="{'active': router.url=='/login' || router.url=='/'}" *ngIf="!app.checkLoggedIn()" ><a routerLink="/login" >Login</a></li> -->
+<!-- <li [ngClass]="{'active': router.url=='/dataentry'}"><a routerLink="/dataentry">Data Entry</a></li> -->
+<!-- <li [ngClass]="{'active': router.url=='/dashboard/dpage'}" *ngIf="app.checkUserAuthorization(['dashboard,view','dashboard,edit'])"><a routerLink="dashboard/dpage" >Dashboard</a></li> -->
+<!-- <li [ngClass]="{'active': router.url=='/index'}" *ngIf="!!app.checkLoggedIn()" ><a routerLink="index">Index</a></li> -->
+<!-- <li [ngClass]="{'active': router.url=='/submissions'}" *ngIf="app.checkUserAuthorization(['data_entry,edit'])"><a -->
+<!-- routerLink="/submissions">Submission Management</a></li> -->
+<!-- <li [ngClass]="{'active': router.url=='/indicator-management'}" *ngIf="app.checkUserAuthorization(['indicator_mgmt,edit'])"><a -->
+<!-- routerLink="/indicator-management">Indicator Management</a></li> -->
+<!-- <li [ngClass]="{'active': router.url=='/user-management'}" *ngIf="app.checkUserAuthorization(['USER_MGMT_ALL_API'])"><a
+					routerLink="/user-management">User Management</a></li>
+				 <li [ngClass]="{'active': router.url=='/login'}" *ngIf="!app.checkLoggedIn()"><a routerLink="login">Login</a></li>
+				<li [ngClass]="{'active': router.url=='/login'}" *ngIf="!!app.checkLoggedIn()"><a style="cursor:pointer" (click)="app.logout()">Logout</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<img class="img-responsive tamilGlogo" src="assets/images/logos/1200px-TamilNadu_Logo.svg.png" />
+			</ul>
+		</div>
+	</div>
+</nav> -->
+<div class="nav-menu-large  hidden-sm-down" >
+		<div  class="container-fluid logo-background">
+				<div  class="row">
+					<div  class="col-md-8 left-container">
+							<div class="logo-sec logo-con">
+								<a  href=""
+											target="_blank"><img  alt="gov-logo" class="govt-logo"
+												src="assets/images/logos/SCPS LOGO 1.png" title=""></a>
+									
+							</div>
+							<div  class="col-md-7 head-info heading-name logo-sec">
+								<h1  class="heading-title"> State Child Protection Society</h1>
+								<h2 >Tamil Nadu</h2>
+							</div>
+					</div>
+					<div  class="col-md-4 right-logo text-right">
+							<img  alt="sbm" class="cm-logo"
+									src="assets/images/logos/1200px-TamilNadu_Logo.svg.png" title="">
+					</div>
+				</div>
+			</div>
+			
+	<header  id="header" class="sticky">
+		<div  class="container-fluid">
+			<div  class="row">
+				<nav  class="navbar navbar-expand-lg navbar-light">
+					<ul  class="col-md-4 navbar-nav ml-auto loginuser">
+						<li  class=" dropdown " *ngIf="!!app.checkLoggedIn()" ><span  class="welcome-name">
+								Welcome {{app.getUserDetails().username}}</span></li>
+					</ul>
+					<div  class="col-md-8" id="navbarNavDropdown">
+						<ul  class="navbar-nav">
+								<li [ngClass]="{'active': router.url=='/user-management'}" class="nav-item" *ngIf="app.checkUserAuthorization(['USER_MGMT_ALL_API', 'CREATE_USER'])" ><a
+									class="nav-link"	routerLink="/user-management">User Management</a></li>
+							<li [ngClass]="{'active': router.url=='/report/raw-report'}" class="nav-item" *ngIf="app.checkUserAuthorization(['ALL_FORM_RAWDATA_DOWNLOAD'])"><a
+								class="nav-link"	routerLink="/report/raw-report">Raw Report</a></li>
+							<li [ngClass]="{'active': router.url=='/dashboard/performance-view'}" class="nav-item" *ngIf="app.checkUserAuthorization(['DASHBOARD_VIEW'])"><a
+								class="nav-link"	routerLink="/dashboard/performance-view">Performance View</a></li>	
+								<li [ngClass]="{'active': router.url=='/dashboard/thematic-view'}" class="nav-item" ><a
+									class="nav-link"	routerLink="/dashboard/thematic-view">Dashboard View</a></li>	
+									
+									<li [ngClass]="{'active': router.url=='/index'}" class="nav-item" ><a
+										class="nav-link"	routerLink="/index">Index View</a></li>
+										
+										<li [ngClass]="{'active': router.url=='/quickStats'}" class="nav-item" *ngIf="app.checkUserAuthorization(['QUICK_STATS'])"><a
+											class="nav-link"	routerLink="/quickStats"> CCI Quick Stats </a></li>	
+
+							<li [ngClass]="{'active': router.url=='/drafts'}" class="nav-item" *ngIf="app.checkUserAuthorization(['DATA_ENTRY'])"><a
+									class="nav-link"	routerLink="/drafts">Submission History</a></li>
+								<li [ngClass]="{'active': router.url=='/login'}" class="nav-item" *ngIf="!app.checkLoggedIn()"><a
+									class="nav-link"	routerLink="login">Login</a></li>
+								<li [ngClass]="{'active': router.url=='/login'}" class="nav-item" *ngIf="!!app.checkLoggedIn()"><a style="cursor:pointer"
+									class="nav-link"	(click)="app.logout()">Logout</a></li>
+							<!---->
+						</ul>
+					
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+</div>
+
+<!-- mobile navigation -->
+<nav class="navbar navbar-expand-md scps-navbar navbar-dark  hidden-sm-up">
+	<div style="width: 100%">
+		<div class="navbar-header">
+			<img class="navbar-brand" class="scpsTlogo img-responsive" src="assets/images/logos/SCPS LOGO 1.png" />
+			<h2 class="scps_header">State Child Protection Society</h2>
+			<h3 class="scps_subheader">Tamil Nadu</h3>
+		</div>
+		<!-- <div class="right-logo"> -->
+		<img class="img-responsive tamilGlogo" src="assets/images/logos/1200px-TamilNadu_Logo.svg.png" />
+		<!-- </div> -->
+	</div>
+	<div style="width: 100%">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<ul class="nav navbar-nav Welcome-user">
+			<li *ngIf="!!app.checkLoggedIn()"><b class="res-admin">Welcome {{app.getUserDetails().username}}</b></li>
+		</ul>
+
+	</div>
+	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+		<ul class="nav navbar-nav">
+			<li [ngClass]="{'active': router.url=='/user-management'}"
+				*ngIf="app.checkUserAuthorization(['USER_MGMT_ALL_API'])">
+
+				<a routerLink="/user-management">User Management</a></li>
+			<!-- <li [ngClass]="{'active': router.url=='/dataentry'}"
+				*ngIf="app.checkUserAuthorization(['DATA_ENTRY']) && !app.getDataDontEntryAllowRoute()"><a
+					routerLink="/dataentry">Data Entry</a></li> -->
+					<!-- <li [ngClass]="{'active': router.url=='/performance-view'}" class="nav-item" *ngIf="!!app.checkLoggedIn()"><a
+						class="nav-link"	routerLink="/performance-view">Performance View</a></li> -->
+						<li [ngClass]="{'active': router.url=='/dashboard/thematic-view'}" class="nav-item" ><a
+							class="nav-link"	routerLink="/dashboard/thematic-view">Dashboard View</a></li>
+							<li [ngClass]="{'active': router.url=='/index'}" class="nav-item" ><a
+								class="nav-link"	routerLink="/index">Index View</a></li>
+
+
+			<li [ngClass]="{'active': router.url=='/drafts'}" *ngIf="app.checkUserAuthorization(['DATA_ENTRY'])"><a
+					routerLink="/drafts">Submission History</a></li>
+			<li [ngClass]="{'active': router.url=='/login'}" *ngIf="!app.checkLoggedIn()"><a
+					routerLink="login">Login</a></li>
+			<li [ngClass]="{'active': router.url=='/login'}" *ngIf="!!app.checkLoggedIn()"><a style="cursor:pointer"
+					(click)="app.logout()">Logout</a></li>
+		</ul>
+
+	</div>
+
+
+</nav>

@@ -1,0 +1,150 @@
+<div class="container-fluid perf-bg">
+  <div class="row">
+    <div class="col-md-12">
+        <h2 class="page-heading">Performance View</h2>
+    </div>
+  </div>
+  
+  <div class="row">
+      <div class="col-md-12">
+          <div class="sources">
+            <div *ngFor="let source of dashboardService.sources" (click)="selectSource(source)" class="source"
+              [ngClass]="source.sourceId == selectedSource.sourceId ? 'selected': ''">
+              {{source.sourceName}}
+            </div>
+
+            <div class="top-legend-section">
+              <div class="top-legend-container" *ngFor="let legend of legends"><div class="square {{legend.value}}"></div><span> {{legend.key}} </span></div>
+              <!-- <div class="top-legend-container"><div class="square secondslices"></div><span> 0.61 - 0.80 </span></div> -->
+              <!-- <div class="top-legend-container"><div class="square thirdslices"></div><span>0.41 - 0.60</span></div>
+              <div class="top-legend-container"><div class="square fourthslices"></div><span>0.61 - 0.80</span></div> -->
+              <!-- <div class="top-legend-container"><div class="square fifthslices"></div><span>0.81 - 1.00</span></div> -->
+            </div>
+          </div>
+        </div>
+  </div>
+  
+
+
+  <div class="row main-sec">
+    <div class="col-md-6">
+      <div class="legend-sec" *ngIf="sectors?.length">Index - Overall </div>
+      <div class="legend-timepriod" *ngIf="sectors?.length">{{timperiodOfMapData}}</div>
+      <div class="map-section">
+        <app-thematic-map *ngIf="mapData" [mapData]="mapData" (onAreaSelection)="selectArea($event)"></app-thematic-map>
+
+        <div class="main-container blue">
+          <div class="circle">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="sector-section">
+        <h6 class="selected-area">Source : <span>{{selectedSource?.sourceName}}</span>, Area
+          :<span>{{selectedArea?.areaName}}</span></h6>
+        <div class="four-right-box">
+          <div class="row inner-four-right-box">
+            <div class="col-md-6" *ngFor="let sector of sectors; let i = index;">
+              <div class="sec-box {{sector.cssClass}}">
+                <div class="val-cont">
+                  <p>{{sector.key}}</p>
+                  <h3 class="sector-value">{{sector.value}}</h3>
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row main-sec">
+    <div class="col-md-6">
+      <div class="linchart-section">
+      <h6 class="selected-area">Source : <span>{{selectedSource?.sourceName}}</span>, Area
+        :<span>{{selectedArea?.areaName}}</span></h6>
+      <div class="line-chart-border">
+        <sdrc-line-chart *ngIf="lineChartData" [data]="lineChartData"></sdrc-line-chart>
+        <!-- <div class="bootom-container bottom-blue">
+        <div class="bottom-circle">
+      
+        </div>
+      </div> -->
+      </div>
+      <div class="legend-section">
+        <div class="legend-container"><div class="square rfc"></div><span>Index - Results for Children</span></div>
+        <div class="legend-container"><div class="square hr"></div><span>Index - Human Resource</span></div>
+        <div class="legend-container"><div class="square icps"></div><span>Index - ICPS Structure and Functionality</span></div>
+        <div class="legend-container"><div class="square overall"></div><span>Index - Overall</span></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+    <div class="col-md-6">
+      <div class="barchart-section">
+      <h6 class="selected-area">Source : <span>{{selectedSource?.sourceName}}</span>, Area
+        :<span>{{selectedArea?.areaName}}</span></h6>
+      <div class="selection-container sector-selection" *ngIf="sectors && sectors.length">
+
+          <!-- <mat-tab-group (selectedTabChange)="selectSector($event)" #sectorGroup>
+              <mat-tab *ngFor="let sector of removeOverAll(sectors); let i = index;" [label]="sector.key" ></mat-tab>
+            </mat-tab-group> -->
+
+        <mat-form-field>
+          <mat-select [(ngModel)]="selectedSectorId" name="selectedSector"
+            (selectionChange)="selectSector(selectedSectorId)">
+            <mat-option *ngFor="let sector of removeOverAll(sectors); let i = index;" [value]="sector.subsectorKey">
+              {{sector.key}}
+            </mat-option>
+          </mat-select>
+
+        </mat-form-field>
+      </div>
+      <div class="line-chart-border">
+        <sdrc-bar-chart *ngIf="performanceChartData && performanceChartData.subsectorData"
+          [data]="performanceChartData.subsectorData">
+        </sdrc-bar-chart>
+
+        <small><b >Note: </b> Data for last three timeperiods</small>
+      </div>
+    </div>
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+  <div class="col-md-12 horizontal-bar-sec" *ngIf="performanceChartData && selectedArea && selectedArea.areaCode != 'IND033'">
+    <div class="selection-container" *ngIf="dashboardService.getKeys(performanceChartData.indicatorData).length">
+      <mat-form-field>
+        <mat-select [(ngModel)]="selectedIndicator" name="selectedIndicator">
+          <mat-option *ngFor="let opt of dashboardService.getKeys(performanceChartData.indicatorData)" [value]="opt">
+            {{opt}}
+          </mat-option>
+        </mat-select>
+
+      </mat-form-field>
+    </div>
+    <div class="legend-timepriod" *ngIf="performanceChartData.indicatorData[selectedIndicator]">{{performanceChartData.indicatorData[selectedIndicator][0].timeperiod}} </div>
+    <div class="horizontal-bar-chart-container">
+      <app-horizontal-bar-chart *ngIf="performanceChartData.indicatorData[selectedIndicator]"
+        [data]="performanceChartData.indicatorData[selectedIndicator]"></app-horizontal-bar-chart>
+    </div>
+  </div>
+
+</div>

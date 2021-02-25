@@ -1,0 +1,111 @@
+<div class="container-fluid" style="margin-bottom: 60px;">
+    <div>
+      <div class="col-md-12">
+        <div class="page-header1 row">
+          <h2 class="col-md-8 evm-font-blue text-left">
+            Index <sup><a href="assets/Index Computation & Ranking.pdf" target="_blank"><i class="fa fa-question-circle"
+                  aria-hidden="true"></i></a></sup>
+          </h2>
+          <div class="col-md-4 text-right">
+            <button class="btn btn-link text-right exportTableData" (click)="exportTableData('tab1')">
+              <span class="glyphicon glyphicon-share"></span> Export to Excel
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12"> 
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row selection-sec">
+              <div class="col-md-3">
+                <label for="usr">State<span style="color:red; font-weight:500;">*</span> :</label>
+                <mat-form-field>
+                  <mat-select name="state" [(ngModel)]="selectedStateId" >
+                    <mat-option *ngFor="let opt of areaList | areaFilter:2:1" [value]="opt.area_NId">
+                      {{opt.area_Name}}
+                    </mat-option>
+                  </mat-select> 
+                </mat-form-field>
+              </div>
+              <div class="col-md-3"> 
+                <label for="usr">District<span style="color:red; font-weight:500;">*</span> :</label>
+                <mat-form-field>
+                  <mat-select name="district" [(ngModel)]="selectedDistrictsId" 
+                    multiple >
+
+                    <mat-select-trigger>
+                      {{multiSelectAreaLabel}}
+                    </mat-select-trigger>
+
+
+                    <mat-option [value]="0" (click)="checkUncheckAllSelection();getMatTrigger()">All Districts</mat-option>
+                    <mat-option (click)="validateAllDistrictSelected();getMatTrigger()" *ngFor="let opt of areaList | areaFilter:3:selectedStateId" [value]="opt.area_NId">
+                      {{opt.area_Name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field> 
+              </div>
+              <div class="col-md-4">
+                <label for="usr">Time Period<span style="color:red; font-weight:500;">*</span> :</label>
+                <mat-form-field>
+                  <mat-select name="timeperiod" [(ngModel)]="selectedTimeperiodId" >
+                    <mat-option *ngFor="let opt of timeperiodList" [value]="opt.timePeriod_NId">
+                      {{opt.timePeriod}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-2">
+                <button [disabled]="!selectedDistrictsId.length" mat-raised-button class="btn-primary btn label-btn report-submit" (click)="getNewIndexTable()">Submit</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+    
+              <div class="col-md-6 pull-right">
+                <div class="legend">
+                  <div class="square-box first-slice"></div> (0.81 - 1.00)
+                </div>
+                <div class="legend">
+                  <div class="square-box third-slice"></div> (0.61 - 0.80)
+                </div>
+                <div class="legend">
+                  <div class="square-box fifth-slice"></div> (0.00 - 0.60)
+                </div>
+  
+              </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12" *ngIf="sectorTableData">
+        <sdrc-signal-table [id]="'tab1'" [rowData]="sectorTableData" [columnData]="sectorTableDataColumns"
+          [maxTableHeight]="'400px'" [sorting]="false" [sortExcludeColumn]="[]" [headerFixed]="true"></sdrc-signal-table>
+      </div>
+      <div class="col-md-12 factheading">
+        <div class="sector-container row">
+          <div class="col-md-8 col-xs-8">
+            <label for="usr">Areas of tracking :</label>
+            <mat-form-field class="sector-selection">
+              <mat-select name="sector" [(ngModel)]="selectedSectorId" (selectionChange)="getNewIndexTable()">
+                <mat-option *ngFor="let opt of sectorSubsectorList | sectorFilter:-1" [value]="opt.ic_NId">
+                  {{opt.ic_Name}}
+                </mat-option> 
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4 text-right">
+            <button class="btn btn-link text-right exportTableData" (click)="exportTableData(selectedSectorId)">
+              <span class="glyphicon glyphicon-share"></span> Export to Excel
+            </button>
+          </div>
+  
+        </div>
+      </div>
+      <div class="col-md-12">
+        <sdrc-table [id]="selectedSectorId" [rowData]="indicatorTableData" [columnData]="indicatorTableDataColumns"
+          [threeDColumnData]="indicatorTableHeadColumns" [maxTableHeight]="'700px'" [sorting]="false" [isThreeDimension]="true"
+          [sortExcludeColumn]="[]" [headerFixed]="true"></sdrc-table>
+      </div>
+    </div>
+  </div>

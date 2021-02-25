@@ -1,0 +1,43 @@
+RESTORE POSTGRES DATABASE FROM SQL FILE
+
+psql -U postgres -h localhost -p 5432 -d SCPSTN_18082020 -f "scpstn_202008181259.sql"
+
+
+
+
+
+
+GET CCI FACILITY DETAILS :
+
+SELECT ar.area_name,f.facility_type, f.name,a.user_name,adm.designation_id_fk
+  FROM public.facility f join account_facility_mapping afm on afm.facility_id_fk = f.facility_id
+  join account a on afm.acc_id_fk = a.id
+  join area ar on ar.area_id  = f.area_id_fk
+  join account_designation_mapping adm on adm.acc_id_fk = a.id where f.facility_type is not null
+
+  
+
+  <!!--- Find Facility WIse Index Values
+  
+SELECT d.source_name, t.timeperiod, sector.classification_name, subsector.classification_name, i.indicator_name, u.unit_name, d.percentage 
+  FROM public.data d 
+
+  join indicator_unit_subgroup ius on ius.indicator_unit_subgroup_id = d.indicator_unit_subgroup_id_fk
+  join time_period t on t.timeperiod_id = d.time_period_id_fk
+  join indicator i on i.indicator_id = ius.indicator_id_fk
+  join area a on a.area_id = d.district_id_fk
+  join ic_ius_mapping icius on icius.ius_fk = ius.indicator_unit_subgroup_id
+  join indicator_classification subsector on subsector.indicator_classification_id = icius.ic_fk
+  join indicator_classification sector on sector.indicator_classification_id = subsector.parent_id
+  join unit u on u.unitid = ius.unit_id_fk
+  
+  where t.timeperiod_id IN 
+  
+  (31,32) and sector.indicator_classification_id = 13 order by d.source_name, t.timeperiod
+
+
+
+  
+
+  
+  

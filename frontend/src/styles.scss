@@ -1,0 +1,347 @@
+/* You can add global styles to this file, and also import other style files */
+// html, body {
+//     font-family:Josefin Sans;
+//     padding-top: 48px;
+// }
+@font-face {
+    font-family: Josefin Sans;
+    src: url("assets/fonts/JosefinSans-Regular.ttf");
+}
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+ .mat-form-field{
+    width: 100%;
+}
+ .mat-form-field-infix{
+    border-top: 1px solid #999;
+    border: 1px solid #999;
+    border-bottom: none;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+}
+ .mat-pseudo-checkbox-checked:after {
+    width: 10px !important;
+    height: 5px !important;
+}
+
+ .mat-form-field {
+    display: block;
+}
+ .mandatory{color:red;}
+
+ .mat-form-field-suffix{
+    height: 33px;
+    padding-top: 5px;
+    border: 1px solid #adadad;
+}
+.btn-margin{
+    margin-left: 15px;
+}
+.paddingtop{padding-top:5px;}
+.padding-mintop{padding-top:5px;}
+.margin-bottom{margin-bottom: 6px;}
+.margin-mintop{margin-top:7px;}
+.formpadding{padding-top:10px;}
+mat-checkbox#mat-checkbox-1 {
+    padding-right: 15px;
+}
+mat-radio-button#mat-radio-2 {
+    padding-right: 10px;
+}
+mat-checkbox#mat-checkbox-2 {
+    padding-right: 15px;
+   
+}
+
+div#errorMessage, div#warningMessage, div#infoMessage, div#warningMessageSncuSubmit,
+	.confrirmation-modal, div#pop, div#pop1, .standard-modal, .sampleModal,
+	.confrirmation-modal, div#warnLargeFrequency {
+	z-index: 12000;
+    background: rgba(0, 0, 0, 0.39);
+}
+
+
+.warnhead {
+	background-color: #f0c658;
+	font-weight: bold;
+	margin-bottom: 15px;
+	padding: 12px;
+	font-size: 19px;
+}
+
+.errorhead {
+	background-color: #f07258;
+	font-weight: bold;
+	margin-bottom: 15px;
+	padding: 12px;
+	font-size: 19px;
+}
+
+.successhead {
+	background-color: #aedc5c;
+	font-weight: bold;
+	margin-bottom: 15px;
+	padding: 12px;
+	font-size: 19px;
+}
+
+.warnbody, .errorbody, .successbody {
+	font-size: 15px;
+	padding: 5px 25px;
+}
+div#errorMessage button {
+  color: #f07258;
+}
+
+.modal-body {
+	padding: 0;
+	padding-bottom: 20px;
+}
+
+div#errorMessage button, div#addIndicatorModal button, div#warningMessage button, div#infoMessage button, div#warningMessageSncuSubmit button, .confrirmation-modal button, div#confirmAddIndicator button, div#pop button, .addIndicatorSuccess button, .addIndicatorSuccess button, div#pop1 button, .standard-modal button, #errorMessage1 button {
+  border-radius: 0;
+  background-color: #333a3b;
+  margin-top: 20px;
+}
+div#errorMessage button {
+	color: #f07258;
+}
+div#warningMessage button {
+	color: #f07258;
+}
+
+.errormssgeront{font-size: 80%;}
+.lineheight{line-height: 5%}
+#table-fixed-containertab1 #tab1 thead, .btn-pdf, .btn-excel, #header-fixedtab1 thead {
+    background-color: #57aef6 !important;
+}
+.mt-btn{
+    margin-top: 28px !important;
+}
+// .header-fixed{
+//     margin-right: 0 !important;
+// }
+
+.black-overlay{
+    position: fixed !important;
+
+}
+.mob-left-list{
+    background: #1f497b;
+    color: #fff;
+    padding: 3px;
+    text-align: center;
+    box-shadow: 1px 1px 1px 1px #CCC;
+    width: 75px;
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 45%;
+    z-index: 3;
+    margin-top: 2px;
+  }
+ 
+// #tab1 tr.firstslices {
+//     background-color: rgb(215,25,28);
+// }
+// #tab1 tr.secondslices {
+//     background-color: rgb(253,174,97);
+// }
+// #tab1 tr.thirdslices {
+//     background-color: rgb(166,217,106);
+// }
+// #tab1 tr.fourth {
+//     background-color: rgb(26,150,65);
+// }>>>>>>> .r46
+
+.mat-form-field-disabled .mat-form-field-infix {
+    border-top-style: dotted;
+    border-left-style: dotted;
+    border-right-style: dotted;
+}
+div#table-fixed-containertab1 {
+    border-bottom: 1px solid #CCC;
+}
+div#table-fixed-containertab1 table{
+    margin-bottom: 0;
+}
+.evm-font-blue {
+    color: #000000;
+    margin-top: 0;
+}
+.evm-font-blue:hover {
+    color: #1a3f91;
+}
+.page-header1 {
+    border-bottom: 1px solid #ebebeb;
+    color: #fa5050;
+    font-weight: lighter;
+    padding-bottom: 6px;
+    margin: 20px 0 20px -2px;
+}
+
+.mat-button-toggle-checked{
+    font-weight: bold;
+}
+button.col-md-2.btn.btn-link.text-right.exportTableData {
+    border: 1px solid #337ab7 !important;
+    margin: 20px 0px 0px 241px;
+    text-decoration: none;
+    width: 14%;
+}
+.axis--x path{
+    stroke: #fff !important;
+} 
+.axis--y path{
+    stroke: #fff !important;
+}
+
+.tick text {
+    fill: #333 !important;
+}
+
+.line {
+    fill: none !important;
+    stroke-width: 1.5px;
+  }
+
+  .area .line {
+    fill: none !important;
+    stroke-width: 1.5px;
+    stroke: #fff !important;
+  }
+  .dot
+  {
+    stroke:#fff !important;
+    fill: #fff !important;
+    stroke-width: 1px;
+  }
+  text{
+	fill: #fff;
+  }
+  .tick
+  {
+    color: #fff !important;
+  }
+
+  .mat-form-field-disabled .mat-form-field-infix {
+    background-color: #EEE;
+  }
+
+
+
+
+  @media (min-width: 768px){
+.modal-dialog {
+    max-width: 600px;
+    margin: 1.75rem auto;
+}
+// #bodyMain{
+//     margin-top: 122px;
+// }
+  }
+
+@media(max-width: 767px){
+    // #bodyMain{
+    //     margin-top: 75px;
+    // }
+
+}
+
+.main-sec{
+    margin-bottom: 20px;
+}
+.main-sec .selection-container .mat-form-field-infix{
+    background-color: #57aef6;
+  }
+  .blue-text{
+      color: #1a3f91;
+  }
+
+
+  app-dashboard-line-chart .tick text {
+    fill: #fff !important;
+}
+
+app-dashboard-line-chart .tick line{
+    stroke: #fff !important;
+}
+.shortName{
+    color:#333 !important;
+}
+
+.map_popover {
+	background: url("assets/images/bg_overlay.png") repeat scroll 0 0
+		rgba(0, 0, 0, 0);
+	border-radius: 5px;
+	color: #fff;
+	display: none;
+	font: italic 14px Georgia;
+	left: 0;
+	opacity: 0;
+	padding: 10px 20px;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	z-index: 1000;
+}
+
+.map_popover:after {
+	background: url("assets/images/navbar_caret.png") no-repeat scroll 0 0
+		rgba(0, 0, 0, 0);
+	bottom: -5px;
+	content: "";
+	display: block;
+	height: 5px;
+	left: 45%;
+	position: absolute;
+	width: 13px;
+}
+
+.map_popover .flag {
+	border: 1px solid #080719;
+	display: inline-block;
+	margin: 0 auto 5px;
+	width: 15px;
+}
+
+.map_popover h3 {
+	font: 21px 'oswaldlight';
+	margin: 0;
+	text-transform: uppercase;
+}
+
+
+.map_popover .factor {
+	display: block;
+	padding-top: 5px;
+	text-align: center;
+}
+
+.map_popover .factor em {
+	padding-left: 10px;
+}
+
+.map_popover.animated {
+	animation-duration: 0.25s;
+}
+
+.map_popover .see-index {
+	border: 1px solid white;
+	border-radius: 5px;
+	color: #fff;
+	display: block;
+	font: 15px 'oswaldregular';
+	margin: 15px 0 10px;
+	padding: 7px 15px;
+	text-align: center;
+}
+
+.map_popover .see-index:hover {
+	text-decoration: none;
+}
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: #1f4a7c;
+}
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: rgb(128, 167, 224);
+}

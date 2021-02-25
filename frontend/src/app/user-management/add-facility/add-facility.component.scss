@@ -1,0 +1,114 @@
+.content-sec {
+    padding-top: 15px;
+  }
+  .user-label{
+    max-width: 18.666667% !important;
+  }
+  .left-list {
+    height: 100%;
+    width: 30%;
+    background-color: #80a7e0;
+    position: absolute;
+}
+  .user-heading {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 1px solid #333;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 7px;
+  }
+  .btn.user-submit {
+    background-color: #234a7c;
+    border-radius: 0;
+    width: 120px;
+    color: #FFF;
+  }
+  #passNotMatch .modal-header, #successMatch .modal-header{
+    height: 39px;
+    padding: 3px 14px;
+  }
+  p.heading.lead {
+    font-weight: bold;
+    color: #333;
+  }
+  .user-man-btn{
+    margin-top: 10px;
+  }
+  .modal-btn {
+    border-radius: 0;
+    background-color: #333;
+    border: none;;
+    margin: 20px 10px !important;
+  }
+  .suggestions {
+    color: #808080;
+    font-size: 12px;
+
+  }
+  div.note {
+    font-size: 13px;
+    color: #F00;
+    margin-bottom: 25px;
+}
+  .confirm-body {
+    padding-bottom: 0px;
+    padding-top: 20px;
+    text-align: center;;
+  }
+  .confirm-btn {
+    background-color: #57aef6;
+  }
+  .cancel-btn {
+    background-color: #80a7e0;
+  }
+  input.nospinner[type=number]::-webkit-inner-spin-button, 
+  input.nospinner[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+  .material-error{
+    color: #f44336;
+    font-size: 75%;
+    margin-top: -18px;
+    margin-bottom: 12px;
+    font-weight: 400;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+  }
+  
+  div#nav-tab{
+    width: 50%;
+}
+
+.nav-link.active{
+  background-color: #1f4a7c;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 0;
+}
+.nav-tabs {
+  border: 1px solid #1f4a7c;
+  margin-bottom: 20px;
+}
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+  border-color: #1f4a7c;
+  border-radius: 0;
+}
+
+.no-user {
+  text-align: center;
+  font-weight: bold;
+  color: #F00;
+  margin-top: 30px;
+}
+  /** media query starts here **/
+  @media(max-width: 767px){
+    .left-list{
+      width: 50%;
+      z-index: 100;
+      padding-top: 40px;
+      box-shadow: 1px 1px 1px 1px #CCC;
+    }
+  }
